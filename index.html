@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1f2d3a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Deutsch">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Deutsch macht Spaß! – The Complete Beginner's German Course</title>
+<style>
+:root{
+  --bg:#fbf6ee; --ink:#26252e; --muted:#6c6977; --card:#fff; --soft:#f5eedf;
+  --nav:#1f2d3a; --nav2:#2a3b4b; --accent:#f0a830; --accent-ink:#7a4b00; --teal:#2f7a72;
+  --line:#ebe2d2; --ok:#2f9a5a; --okbg:#e0f3e7; --ko:#d6423b; --kobg:#fbe3e1;
+  --der:#2f6fd6; --die:#d6423b; --das:#2f9a5a; --pl:#8a5cc7;
+  --r:16px; --shadow:0 2px 0 rgba(0,0,0,.04),0 6px 22px rgba(60,40,10,.06);
+}
+body.dark{
+  --bg:#16191f; --ink:#ece9f2; --muted:#a19dab; --card:#20242c; --soft:#2a2f39;
+  --nav:#0f1318; --nav2:#1b2129; --line:#323844; --okbg:#173826; --kobg:#3c1d1b; --accent-ink:#ffcf7a;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;transition:background .3s}
+button{font-family:inherit}
+.layout{display:grid;grid-template-columns:290px 1fr;min-height:100vh}
+
+/* NAV */
+nav{background:var(--nav);color:#fff;padding:22px 14px 30px;position:sticky;top:0;height:100vh;overflow-y:auto}
+.brand{display:flex;gap:10px;align-items:center;margin:0 6px 4px}
+.brand .flag{width:34px;height:24px;border-radius:5px;background:linear-gradient(#111 33%,#dd0000 33% 66%,#ffce00 66%);flex:none}
+.brand h1{font-size:1.18rem;margin:0;line-height:1.2}
+.brand-sub{font-size:.8rem;opacity:.65;margin:0 6px 16px}
+.navlink{display:flex;gap:10px;align-items:center;width:100%;text-align:left;background:none;border:0;color:#e9edf2;padding:8px 10px;border-radius:10px;font-size:.92rem;cursor:pointer;margin-bottom:2px}
+.navlink:hover{background:var(--nav2)}
+.navlink.active{background:var(--accent);color:#1f2d3a;font-weight:700}
+.navlink .num{opacity:.55;font-size:.8rem;width:18px;text-align:right}
+.navlink.active .num{opacity:.8}
+.navlink .tick{margin-left:auto;font-size:.8rem}
+.unit-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;opacity:.5;margin:16px 10px 6px}
+.burger{display:none}
+
+/* MAIN */
+main{padding:0 48px 60px;max-width:1020px;width:100%}
+.topbar{position:sticky;top:0;z-index:5;background:var(--bg);display:flex;gap:10px;align-items:center;justify-content:flex-end;padding:14px 0;border-bottom:1px solid var(--line);margin-bottom:26px;flex-wrap:wrap}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:.86rem;font-weight:600;white-space:nowrap}
+.pill.xp{background:var(--accent);border-color:var(--accent);color:#1f2d3a}
+.iconbtn{background:var(--card);border:1px solid var(--line);border-radius:999px;width:36px;height:34px;cursor:pointer;font-size:1rem;color:var(--ink)}
+.kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-size:.75rem;font-weight:700}
+.chapter-head{display:flex;align-items:center;gap:16px;margin:4px 0 8px}
+.chapter-head .emoji{font-size:2.8rem;line-height:1}
+.chapter-head h2{margin:0;font-size:2rem;line-height:1.15}
+.intro{font-size:1.07rem;margin:8px 0 18px}
+.goals{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.goals span{background:var(--soft);border-radius:999px;padding:5px 12px;font-size:.86rem}
+.goals span::before{content:"🎯 "}
+
+section.block{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;margin-bottom:22px;box-shadow:var(--shadow)}
+section.block > h3{margin:0 0 14px;font-size:1.12rem;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+section.block > h3 small{font-weight:400;color:var(--muted);font-size:.85rem}
+h4{margin:0 0 6px}
+table{width:100%;border-collapse:collapse}
+td,th{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+td.de{font-weight:600;font-size:1.04rem}
+td.tip{color:var(--muted);font-size:.9rem}
+.say{border:0;background:var(--soft);border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:.85rem;margin-right:8px;vertical-align:middle;flex:none;color:var(--ink)}
+.say:hover{background:var(--accent)}
+.memo{background:#fff6df;border-left:5px solid var(--accent);border-radius:12px;padding:13px 16px;margin:12px 0}
+body.dark .memo{background:#2d2617}
+.memo .tag{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-ink);display:block;margin-bottom:3px}
+.fact{background:linear-gradient(135deg,#e7f3f1,#f2ecfb);border-radius:var(--r);padding:16px 20px;margin-bottom:22px;display:flex;gap:14px;align-items:flex-start}
+body.dark .fact{background:linear-gradient(135deg,#1c2e2c,#29233a)}
+.fact .big{font-size:1.8rem;line-height:1}
+.der{color:var(--der);font-weight:700}.die{color:var(--die);font-weight:700}.das{color:var(--das);font-weight:700}.pl{color:var(--pl);font-weight:700}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--soft);border-radius:12px;padding:14px 16px}
+.chant{font-family:"Courier New",monospace;font-size:1.12rem;background:var(--nav);color:#ffd58a;padding:10px 16px;border-radius:10px;display:inline-block;margin:6px 6px 6px 0}
+.ex{display:flex;align-items:center;gap:4px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.ex:last-child{border-bottom:0}
+.ex .en{color:var(--muted);margin-left:auto;padding-left:14px;text-align:right;font-size:.92rem}
+.hl{background:#ffe7a8;border-radius:4px;padding:0 3px}
+body.dark .hl{background:#6a5016}
+.bubble{display:flex;gap:10px;margin:8px 0;align-items:flex-start}
+.bubble .who{flex:none;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:.85rem}
+.bubble .txt{background:var(--soft);border-radius:14px;padding:8px 13px;max-width:80%}
+.bubble.r{flex-direction:row-reverse}
+.bubble.r .txt{background:#e5effc}
+body.dark .bubble.r .txt{background:#1f2c40}
+.bubble .en{display:block;font-size:.83rem;color:var(--muted)}
+.bubble .en.hide{filter:blur(5px);cursor:pointer}
+
+/* Practice */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.tabs button{border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:999px;padding:7px 15px;cursor:pointer;font-size:.9rem;font-weight:600}
+.tabs button.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.flip{perspective:800px;height:112px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flip.on .flip-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;backface-visibility:hidden;font-weight:600}
+.front{background:var(--nav);color:#fff;font-size:1.06rem}
+.back{background:var(--accent);color:#1f2d3a;transform:rotateY(180deg)}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.match .col{display:flex;flex-direction:column;gap:8px}
+.match button{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:10px;cursor:pointer;font-size:.95rem;min-height:46px}
+.match button.sel{border-color:var(--accent);background:#fff3d6}
+body.dark .match button.sel{background:#3a2f16}
+.match button.done{background:var(--okbg);border-color:var(--ok);opacity:.55;cursor:default}
+.match button.shake{animation:shake .35s;border-color:var(--ko)}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.listen-play{font-size:1.4rem;width:70px;height:70px;border-radius:50%;border:0;background:var(--teal);color:#fff;cursor:pointer;display:block;margin:6px auto 16px;box-shadow:0 4px 0 #1d524c}
+.listen-play:active{transform:translateY(2px);box-shadow:0 2px 0 #1d524c}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button,.lopts button{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 16px;cursor:pointer;font-size:.95rem}
+.lopts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lopts button{border-radius:12px}
+.opts button:hover,.lopts button:hover{border-color:var(--accent)}
+button.ok{background:var(--okbg)!important;border-color:var(--ok)!important}
+button.ko{background:var(--kobg)!important;border-color:var(--ko)!important}
+.quiz-q{margin-bottom:18px}
+.quiz-q p{margin:0 0 8px;font-weight:600}
+.feedback{font-size:.9rem;margin-top:6px;min-height:1.2em}
+.score{font-weight:700;font-size:1.05rem;margin-top:10px}
+.umlauts{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;font-size:.85rem;color:var(--muted)}
+.umlauts button{border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:8px;width:36px;height:34px;cursor:pointer;font-size:1rem;font-weight:700}
+.type-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:9px 0;border-bottom:1px dashed var(--line)}
+.type-row label{flex:1 1 280px}
+.type-row input{border:2px solid var(--line);border-radius:10px;padding:8px 11px;font-size:1rem;width:170px;background:var(--card);color:var(--ink)}
+.type-row input.ok{border-color:var(--ok);background:var(--okbg)}
+.type-row input.ko{border-color:var(--ko)}
+.btn{background:var(--teal);color:#fff;border:0;border-radius:10px;padding:9px 16px;cursor:pointer;font-size:.92rem;font-weight:600}
+.btn.alt{background:var(--soft);color:var(--ink)}
+.btn.big{padding:12px 22px;font-size:1rem}
+.tfb{font-size:.88rem;min-width:120px}
+.navbtns{display:flex;justify-content:space-between;margin-top:10px;gap:10px}
+
+/* Dashboard & review */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;text-align:center;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:1.7rem}
+.stat span{font-size:.8rem;color:var(--muted)}
+.badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
+.badge{text-align:center;padding:14px 8px;border-radius:14px;background:var(--soft);font-size:.8rem;cursor:pointer}
+.badge .e{font-size:2rem;display:block}
+.badge.off{filter:grayscale(1);opacity:.4}
+.lvlbar{height:12px;background:var(--soft);border-radius:8px;overflow:hidden;margin:8px 0 4px}
+.lvlbar div{height:100%;background:linear-gradient(90deg,var(--accent),#f6c86a);transition:width .5s}
+.bigcard{max-width:440px;margin:10px auto;height:200px;perspective:900px;cursor:pointer}
+.bigcard .face{font-size:1.5rem;border-radius:20px}
+.boxes{display:flex;gap:8px;justify-content:center;margin:14px 0;flex-wrap:wrap}
+.boxes span{background:var(--soft);border-radius:10px;padding:6px 12px;font-size:.82rem}
+
+/* Memory Book cards */
+.mbcards{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.mbcard{height:128px}
+.mbcard .face{flex-direction:column}
+.front .der{color:#7fb0ff}.front .die{color:#ff8a83}.front .das{color:#6fd39a}.front .pl{color:#c7a4ff}
+.mb-de{font-size:1.08rem;line-height:1.3}
+.mb-en{font-size:1rem;line-height:1.3}
+.mb-note{font-size:.78rem;font-weight:500;margin-top:6px;opacity:.85}
+.mb-say{margin:8px 0 0!important;background:rgba(255,255,255,.14)!important;color:#fff!important;width:28px!important;height:28px!important}
+.back .mb-say{background:rgba(0,0,0,.1)!important;color:#1f2d3a!important}
+.pre{color:var(--accent);font-weight:800}
+.back .pre{color:#a14f00}
+/* My words */
+.myform{display:grid;grid-template-columns:1.3fr 1.3fr 1.2fr .8fr auto;gap:8px}
+.myform input,.myform select,#my-bulk{border:2px solid var(--line);border-radius:10px;padding:9px 11px;font-size:1rem;background:var(--card);color:var(--ink);font-family:inherit;min-width:0}
+.myform input:focus,#my-bulk:focus{outline:none;border-color:var(--accent)}
+#my-bulk{width:100%;resize:vertical}
+.mydetails{margin-top:10px;background:var(--soft);border-radius:12px;padding:10px 14px}
+.mydetails summary{cursor:pointer;font-weight:600}
+.mysec{border:2px dashed var(--accent)}
+.mbcard{position:relative}
+.myact{position:absolute;top:6px;z-index:3;width:26px;height:26px;border-radius:50%;border:0;background:rgba(255,255,255,.18);color:#fff;cursor:pointer;font-size:.75rem;line-height:1}
+.mydel{right:6px}.myedit{left:6px}
+.mydel:hover{background:var(--ko)}.myedit:hover{background:var(--teal)}
+.mbcard.on .myact{display:none}
+.mycath{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:16px 0 8px}
+.mycath small{background:var(--soft);border-radius:999px;padding:1px 8px;font-weight:600;color:var(--muted)}
+.mini-btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:3px 9px;font-size:.8rem;cursor:pointer}
+.mycats{margin:4px 0 0}
+#toast{position:fixed;right:22px;bottom:22px;background:var(--accent);color:#1f2d3a;font-weight:800;padding:10px 18px;border-radius:999px;opacity:0;transform:translateY(10px);transition:.3s;pointer-events:none;z-index:50}
+#toast.on{opacity:1;transform:none}
+.confetti{position:fixed;top:-40px;font-size:1.6rem;z-index:60;pointer-events:none;animation:fall 2.2s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+
+.layout > main{min-width:0}
+@media (max-width:860px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .topbar{flex-wrap:nowrap;gap:6px;padding:10px 0;margin-bottom:18px}
+  .topbar .pill{padding:4px 9px;font-size:.78rem}
+  .topbar .iconbtn{width:32px;height:30px;font-size:.9rem;flex:none}
+  #lvl{display:none}
+  section.block{padding:16px 14px}
+  section.block table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  td,th{padding:8px 7px}
+  td.de{white-space:normal}
+  .chapter-head h2{font-size:1.55rem}
+  .chapter-head .emoji{font-size:2.2rem}
+  .goals span{max-width:100%}
+  .mbtools{position:static!important}
+  .mbcards{grid-template-columns:1fr 1fr}
+  .mbcard{height:118px}
+  .mb-de{font-size:.98rem}
+  .cards{grid-template-columns:1fr 1fr}
+  .bigcard{height:170px}
+  .navbtns .btn{flex:1}
+  .myform{grid-template-columns:1fr!important}
+  nav{position:fixed;inset:0 auto 0 0;width:285px;z-index:40;transform:translateX(-100%);transition:transform .3s}
+  nav.open{transform:none;box-shadow:0 0 0 100vmax rgba(0,0,0,.4)}
+  .burger{display:block;margin-right:auto}
+  main{padding:0 16px 50px}
+  .grid2,.grid3,.lopts{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .ex{flex-wrap:wrap}.ex .en{margin-left:38px;text-align:left;padding-left:0}
+}
+@media print{nav,.topbar,.navbtns,.say,.noprint{display:none!important}.layout{display:block}main{max-width:none;padding:0}section.block{break-inside:avoid;box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <nav id="nav">
+    <div class="brand"><div class="flag"></div><h1>Deutsch macht Spaß!</h1></div>
+    <div class="brand-sub">The playful beginner's course · A1</div>
+    <div id="menu"></div>
+  </nav>
+  <main>
+    <div class="topbar">
+      <button class="iconbtn burger" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+      <span class="pill" id="lvl"></span>
+      <span class="pill xp" id="xp"></span>
+      <span class="pill" id="streak"></span>
+      <button class="iconbtn" title="Slower / normal audio" id="speedBtn" onclick="toggleSpeed()">🐢</button>
+      <button class="iconbtn" title="Dark mode" onclick="toggleDark()">🌙</button>
+    </div>
+    <div id="content"></div>
+  </main>
+</div>
+<div id="toast"></div>
+
+<script>
+/* =========================================================
+   COURSE CONTENT
+   vocab rows: [german, english, tip, (optional) text to speak]
+   ========================================================= */
+const UNITS = [
+  {name:"Unit 1 · First steps", from:0},
+  {name:"Unit 2 · Building blocks", from:4},
+  {name:"Unit 3 · Your world", from:9},
+  {name:"Unit 4 · Getting things done", from:13},
+  {name:"Finish line", from:17}
+];
+
+const chapters = [
+/* ---------------------------------------------------- 0 */
+{
+  id:"welcome", emoji:"👋", title:"Welcome to German",
+  goals:["Know how the course works","Discover words you already know","Learn the 3 golden habits"],
+  intro:"Willkommen! (Welcome!) This course takes you from zero to simple everyday conversations: introducing yourself, counting, ordering a coffee, talking about your family and your hobbies. Every chapter is short, visual and full of little games.",
+  html:`
+  <section class="block"><h3>🧭 How each chapter works</h3>
+    <div class="grid3">
+      <div class="mini"><h4>📚 Learn</h4>Vocabulary with audio 🔊, grammar in small bites, and a mini dialogue.</div>
+      <div class="mini"><h4>🧠 Remember</h4>Yellow <b>memory hooks</b>: silly images, rhymes and chants that make words stick.</div>
+      <div class="mini"><h4>🎮 Practise</h4>Flashcards, a matching game, a listening game, typing practice, then a quiz.</div>
+    </div>
+    <p style="margin-top:14px">Pass a quiz with <b>75% or more</b> and you earn the chapter's badge 🏅. Every right answer gives you <b>XP</b>, and studying on consecutive days builds your <b>streak 🔥</b>. Your progress is saved in this browser.</p>
+  </section>
+  <section class="block"><h3>🎁 Surprise: you already know some German</h3>
+    <p>English and German are close cousins (both are Germanic languages). Click the cards:</p>
+    <div class="cards" data-cards='[["das Haus","house"],["der Finger","finger"],["die Hand","hand"],["das Wasser","water"],["der Name","name"],["das Buch","book"],["die Musik","music"],["der Garten","garden"],["die Maus","mouse"],["der Ball","ball"]]'></div>
+    <div class="memo"><span class="tag">Memory hook · The secret code</span>Many sounds shifted between the two languages. Learn the code and you can guess hundreds of words:<br>
+    German <b>d</b> ↔ English <b>th</b>: <i>danken → thank, das → that, drei → three</i><br>
+    German <b>t</b> ↔ English <b>d</b>: <i>trinken → drink, Tag → day, gut → good</i><br>
+    German <b>pf</b> ↔ English <b>p</b>: <i>Pfeffer → pepper, Apfel → apple</i><br>
+    German <b>z</b> ↔ English <b>t</b>: <i>zehn → ten, Zunge → tongue</i></div>
+  </section>
+  <section class="block"><h3>⭐ The 3 golden habits</h3>
+    <ol>
+      <li><b>Speak out loud.</b> Press 🔊, repeat, exaggerate. Your mouth needs practice too. (Tip: the 🐢 button at the top slows the voice down.)</li>
+      <li><b>Learn nouns with their article</b> (der / die / das). Always. You'll see why in Chapter 5.</li>
+      <li><b>Little and often.</b> Ten minutes a day beats two hours on Sunday. Use the 🃏 <b>Review deck</b> to revise all the cards at once.</li>
+    </ol>
+  </section>`,
+  fact:"German is the most widely spoken native language in the European Union, and it's an official language in Germany, Austria, Switzerland, Liechtenstein, Luxembourg and Belgium.",
+  quiz:[
+    {q:"Using the secret code, <i>das Bett</i> probably means…", o:["the bed","the bet","the bath"], a:0},
+    {q:"<i>trinken</i> probably means…", o:["to drink","to think","to train"], a:0},
+    {q:"<i>der Apfel</i> is…", o:["the apple","the April","the ape"], a:0},
+    {q:"What should you always learn with a noun?", o:["its article (der/die/das)","its plural only","its spelling backwards"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 1 */
+{
+  id:"sounds", emoji:"🔤", title:"Sounds & Letters",
+  goals:["Read any German word aloud","Master ei / ie","Pronounce ä, ö, ü and ß"],
+  intro:"German is a very honest language: you mostly say what you see. Learn these rules once and you can pronounce almost any word, even ones you don't understand yet.",
+  vocabHead:["Letter / rule","Example","Sounds like"],
+  vocab:[
+    ["W = English v","Wasser (water)","“VAH-ser”","Wasser"],
+    ["V = English f","Vater (father)","“FAH-ter”","Vater"],
+    ["J = English y","ja (yes)","“yah”","ja"],
+    ["Z = ts","Zeit (time)","“tsite”","Zeit"],
+    ["S before a vowel = z","Sonne (sun)","“ZON-neh”","Sonne"],
+    ["ß = ss","Straße (street)","“SHTRAH-sseh”","Straße"],
+    ["ei = “eye”","Wein (wine), drei","“vine”, “dry”","Wein. drei"],
+    ["ie = “ee”","Wien (Vienna), Bier","“veen”, “beer”","Wien. Bier"],
+    ["eu / äu = “oy”","Euro, Häuser","“OY-ro”, “HOY-zer”","Euro. Häuser"],
+    ["sch = sh","Schule (school)","“SHOO-leh”","Schule"],
+    ["st / sp at the start = sht / shp","Stadt, Sport","“shtatt”, “shport”","Stadt. Sport"],
+    ["ä","Käse (cheese)","like the e in “bed”, held longer","Käse"],
+    ["ö","schön (beautiful)","say “ay” while rounding your lips","schön"],
+    ["ü","müde (tired)","say “ee” while rounding your lips","müde"],
+    ["ch after a, o, u","Bach, Buch","a soft scrape in the throat, like Scottish “loch”","Bach. Buch"],
+    ["ch after e, i, consonants","ich, nicht","a cat's hiss: “ihh”","ich. nicht"],
+    ["-e at the end is spoken","Name, Tante","“NAH-meh”, “TAN-teh”","Name. Tante"],
+    ["-er at the end ≈ “ah”","Vater, Lehrer","“FAH-tah”","Vater. Lehrer"]
+  ],
+  memos:[
+    "<b>The ei / ie rule:</b> pronounce the <b>second</b> letter, saying it the way you'd say its name in English. <i>ei</i> → “I” (Wein = vine). <i>ie</i> → “E” (Wien = veen). Never fails!",
+    "<b>The umlaut face:</b> the two dots are eyes on a little face that's <b>pouting</b>. For ö and ü, push your lips forward like you're about to kiss someone.",
+    "<b>W and V played musical chairs:</b> W took V's sound and V took F's. Think of a <b>V</b>olks<b>w</b>agen: “<b>F</b>olks-<b>v</b>agen”.",
+    "<b>ß</b> looks like a B but it's a fancy double S. Nickname: “the snake on a stick” 🐍. If you can't type it, write <i>ss</i>.",
+    "<b>Every letter counts:</b> the final -e is never silent. <i>Name</i> is “NAH-meh”, not “name”."
+  ],
+  fact:"In German, <b>every noun starts with a capital letter</b>: der Hund, die Katze, das Haus. It's a great clue: if a word in the middle of a sentence has a capital, it's a thing!",
+  cards:[["Wein","wine (“vine”)"],["Wien","Vienna (“veen”)"],["Zeit","time (“tsite”)"],["ich","I (the hiss: “ihh”)"],["schön","beautiful"],["Straße","street"],["Käse","cheese"],["müde","tired"]],
+  noMatch:true, noListen:true,
+  type:[
+    {p:"Write the German word for <b>street</b> (with the snake on a stick!)", a:["Straße"]},
+    {p:"Wine in German (ei or ie?): W___n", a:["Wein"]},
+    {p:"Beer in German (ei or ie?): B___r", a:["Bier"]},
+    {p:"<b>beautiful</b> (needs an umlaut): sch_n", a:["schön"]}
+  ],
+  quiz:[
+    {q:"How do you say <i>drei</i>?", o:["“dry”","“dree”","“dray”"], a:0},
+    {q:"How do you say <i>Bier</i>?", o:["“beer”","“buyer”","“bee-air”"], a:0},
+    {q:"German <i>W</i> sounds like English…", o:["v","w","f"], a:0},
+    {q:"<i>Zug</i> (train) starts with…", o:["a “ts” sound","a “z” sound","an “s” sound"], a:0},
+    {q:"Which word has the throat (Bach) sound?", o:["Buch","ich","nicht"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 2 */
+{
+  id:"hello", emoji:"🤝", title:"Hello & Goodbye",
+  goals:["Greet anyone at any time of day","Introduce yourself","Choose between du and Sie"],
+  intro:"Your very first conversation: say hello, give your name, say where you're from, ask how someone is and say goodbye politely.",
+  vocab:[
+    ["Hallo!","Hello!","works with everyone"],
+    ["Guten Morgen!","Good morning!","until about 11 am"],
+    ["Guten Tag!","Hello / Good day!","polite, daytime"],
+    ["Guten Abend!","Good evening!",""],
+    ["Gute Nacht!","Good night!","only when going to bed"],
+    ["Wie heißt du?","What's your name? (informal)","lit. “How are you called?”"],
+    ["Wie heißen Sie?","What's your name? (formal)",""],
+    ["Ich heiße …","My name is …","Ich heiße Mia."],
+    ["Ich bin …","I am …","Ich bin Tom."],
+    ["Woher kommst du?","Where are you from?",""],
+    ["Ich komme aus …","I come from …","Ich komme aus England."],
+    ["Ich wohne in …","I live in …","Ich wohne in London."],
+    ["Wie geht's?","How are you?","short for “Wie geht es dir?”"],
+    ["Gut, danke! Und dir?","Fine, thanks! And you?",""],
+    ["Es geht.","So-so.","lit. “it goes”"],
+    ["Freut mich!","Nice to meet you!","lit. “pleases me”"],
+    ["Bitte","Please / You're welcome",""],
+    ["Danke (schön)","Thank you (very much)",""],
+    ["Entschuldigung!","Excuse me / Sorry!","break it up: Ent-schul-di-gung"],
+    ["Ja / Nein","Yes / No",""],
+    ["Tschüss!","Bye!","informal"],
+    ["Auf Wiedersehen!","Goodbye!","formal"],
+    ["Bis morgen!","See you tomorrow!",""],
+    ["Bis später!","See you later!",""]
+  ],
+  memos:[
+    "<b>du vs. Sie:</b> <b>Sie</b> (always with a capital S) is for strangers, shop staff, your boss, older people. Picture it wearing a <b>S</b>uit 👔. <b>du</b> is for friends, family, children and pets: lowercase, relaxed, in jeans 👖. When in doubt, use Sie.",
+    "<b>Auf Wiedersehen</b> = “until we <b>see</b> each other <b>again</b>”: <i>wieder</i> = again, <i>sehen</i> = see. On the phone, Germans say <i>Auf Wieder<b>hören</b></i>: “until we <b>hear</b> each other again” 📞.",
+    "<b>Tschüss</b> sounds like a happy sneeze: “CHÜSS!” 🤧. Say it with a smile and a little wave.",
+    "<b>heißen</b> is a “hot” verb: <i>heiß</i> also means hot 🔥. “Ich heiße Tom”: my name is hot, Tom."
+  ],
+  dialogue:[
+    ["Anna","Hallo! Ich heiße Anna. Wie heißt du?","Hello! My name is Anna. What's your name?"],
+    ["Tom","Hallo Anna! Ich heiße Tom. Freut mich!","Hi Anna! I'm Tom. Nice to meet you!"],
+    ["Anna","Woher kommst du, Tom?","Where are you from, Tom?"],
+    ["Tom","Ich komme aus England. Und du?","I'm from England. And you?"],
+    ["Anna","Ich komme aus Berlin. Wie geht's?","I'm from Berlin. How are you?"],
+    ["Tom","Gut, danke! Und dir?","Fine, thanks! And you?"],
+    ["Anna","Super! Tschüss, bis morgen!","Great! Bye, see you tomorrow!"]
+  ],
+  fact:"Greetings change across the German-speaking world: in Bavaria and Austria you'll hear <b>Grüß Gott!</b> or <b>Servus!</b>, in Switzerland <b>Grüezi!</b>, and in northern Germany <b>Moin!</b> (at any time of day).",
+  cards:[["Guten Morgen!","Good morning!"],["Wie heißt du?","What's your name?"],["Freut mich!","Nice to meet you!"],["Tschüss!","Bye!"],["Entschuldigung!","Excuse me / Sorry!"],["Wie geht's?","How are you?"],["Bis später!","See you later!"],["Es geht.","So-so."]],
+  type:[
+    {p:"My name is Tom: Ich ______ Tom.", a:["heiße"]},
+    {p:"Formal: Wie ______ Sie?", a:["heißen"]},
+    {p:"I come from Spain: Ich komme ___ Spanien.", a:["aus"]},
+    {p:"Goodbye (formal): Auf ______!", a:["Wiedersehen"]}
+  ],
+  quiz:[
+    {q:"You meet your new boss. You ask…", o:["Wie heißen Sie?","Wie heißt du?","Tschüss!"], a:0},
+    {q:"<i>Ich komme aus Spanien</i> means…", o:["I come from Spain","I'm going to Spain","I like Spain"], a:0},
+    {q:"It's 10 pm and you're going to bed:", o:["Gute Nacht!","Guten Abend!","Guten Tag!"], a:0},
+    {q:"Someone says <i>Danke!</i> You reply…", o:["Bitte!","Hallo!","Freut mich!"], a:0},
+    {q:"<i>Es geht</i> means…", o:["So-so","It's going away","Let's go"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 3 */
+{
+  id:"numbers", emoji:"🔢", title:"Numbers 0–1000",
+  goals:["Count from 0 to 20","Build any number up to 100","Say your age and phone number"],
+  intro:"Numbers are everywhere: prices, phone numbers, your age, the bus you need. Learn 0 to 20, then one simple trick unlocks everything up to 100.",
+  vocab:[
+    ["null","0",""],["eins","1","“eyns”"],["zwei","2","“tsvy”"],["drei","3","“dry”"],
+    ["vier","4","“feer”"],["fünf","5",""],["sechs","6","“zex”"],["sieben","7","“ZEE-ben”"],
+    ["acht","8","throat ch!"],["neun","9","“noyn”"],["zehn","10","“tsayn”"],["elf","11","like the elf 🧝"],
+    ["zwölf","12",""],["dreizehn","13","3 + 10"],["vierzehn","14",""],["fünfzehn","15",""],
+    ["sechzehn","16","drops the -s!"],["siebzehn","17","drops the -en!"],["achtzehn","18",""],["neunzehn","19",""],
+    ["zwanzig","20",""],["einundzwanzig","21","one-and-twenty"],["dreißig","30","ß, not z!"],["vierzig","40",""],
+    ["fünfzig","50",""],["sechzig","60","drops the -s!"],["siebzig","70","drops the -en!"],["achtzig","80",""],
+    ["neunzig","90",""],["hundert","100",""],["tausend","1000",""]
+  ],
+  html:`
+  <section class="block"><h3>🔄 The backwards trick</h3>
+    <p>For 21 to 99, Germans say the <b>units first</b>, then <i>und</i>, then the tens. All in one word:</p>
+    <div class="ex"><button class="say" data-say="einundzwanzig">🔊</button><b>ein</b>-und-<b>zwanzig</b><span class="en">21 = “one-and-twenty”</span></div>
+    <div class="ex"><button class="say" data-say="siebenundvierzig">🔊</button><b>sieben</b>-und-<b>vierzig</b><span class="en">47 = “seven-and-forty”</span></div>
+    <div class="ex"><button class="say" data-say="neunundneunzig">🔊</button><b>neun</b>-und-<b>neunzig</b><span class="en">99 = “nine-and-ninety”</span></div>
+    <div class="ex"><button class="say" data-say="hundertfünfundzwanzig">🔊</button><b>hundert</b>-fünf-und-zwanzig<span class="en">125</span></div>
+    <div class="memo"><span class="tag">Memory hook</span>Remember the nursery rhyme “<b>four-and-twenty</b> blackbirds baked in a pie”? Old English counted backwards too! German just never stopped. 🐦</div>
+    <h4 style="margin-top:16px">Useful phrases</h4>
+    <div class="ex"><button class="say" data-say="Ich bin dreißig Jahre alt.">🔊</button>Ich bin 30 Jahre alt.<span class="en">I'm 30 years old.</span></div>
+    <div class="ex"><button class="say" data-say="Wie alt bist du?">🔊</button>Wie alt bist du?<span class="en">How old are you?</span></div>
+    <div class="ex"><button class="say" data-say="Meine Nummer ist null, eins, sieben, sechs.">🔊</button>Meine Nummer ist 0-1-7-6…<span class="en">My number is… (digit by digit)</span></div>
+    <div class="ex"><button class="say" data-say="Das kostet fünf Euro.">🔊</button>Das kostet 5 Euro.<span class="en">That costs 5 euros.</span></div>
+  </section>`,
+  memos:[
+    "<b>Tens end in -zig</b> (“tsig”): zwanzig, vierzig, fünfzig… except the rebel <b>dreißig</b> (30), which uses ß.",
+    "<b>11 and 12 are special</b>, just like in English: <i>elf</i> (eleven 🧝) and <i>zwölf</i> (twelve). From 13 on, it's simply number + <i>zehn</i>.",
+    "<b>Six and seven go on a diet</b> in the teens and tens: sechs → <b>sech</b>zehn, <b>sech</b>zig; sieben → <b>sieb</b>zehn, <b>sieb</b>zig.",
+    "<b>On the phone</b>, Germans often say <i>zwo</i> instead of <i>zwei</i> so it doesn't get confused with <i>drei</i>."
+  ],
+  fact:"Germans count on their fingers starting with the <b>thumb</b> 👍 = 1. Ordering “two beers” with your index and middle finger might get you three!",
+  cards:[["drei","3"],["sieben","7"],["zwölf","12"],["siebzehn","17"],["dreißig","30"],["fünfundvierzig","45"],["sechzig","60"],["hundert","100"]],
+  type:[
+    {p:"Write <b>7</b> in letters", a:["sieben"]},
+    {p:"Write <b>12</b> in letters", a:["zwölf"]},
+    {p:"Write <b>21</b> in letters (one word!)", a:["einundzwanzig"]},
+    {p:"Write <b>30</b> in letters", a:["dreißig"]},
+    {p:"Write <b>16</b> in letters (careful!)", a:["sechzehn"]}
+  ],
+  quiz:[
+    {q:"<i>vierundzwanzig</i> = ?", o:["24","42","14"], a:0},
+    {q:"How do you write 16?", o:["sechzehn","sechszehn","sechzig"], a:0},
+    {q:"<i>dreißig</i> = ?", o:["30","13","33"], a:0},
+    {q:"58 in German is…", o:["achtundfünfzig","fünfundachtzig","fünfachtzig"], a:0},
+    {q:"“How old are you?” =", o:["Wie alt bist du?","Wie viel bist du?","Wie geht's?"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 4 */
+{
+  id:"seinhaben", emoji:"💪", title:"I am, I have: sein & haben",
+  goals:["Know all the personal pronouns","Conjugate sein (to be)","Conjugate haben (to have)"],
+  intro:"Two verbs carry half the language: <b>sein</b> (to be) and <b>haben</b> (to have). They're irregular, so we learn them by heart, with a chant.",
+  html:`
+  <section class="block"><h3>👤 Pronouns + the two super-verbs</h3>
+    <table><tr><th>German</th><th>English</th><th>sein · to be</th><th>haben · to have</th></tr>
+      <tr><td class="de">ich</td><td>I</td><td>ich <b>bin</b></td><td>ich <b>habe</b></td></tr>
+      <tr><td class="de">du</td><td>you (one friend)</td><td>du <b>bist</b></td><td>du <b>hast</b></td></tr>
+      <tr><td class="de">er / sie / es</td><td>he / she / it</td><td>er <b>ist</b></td><td>er <b>hat</b></td></tr>
+      <tr><td class="de">wir</td><td>we</td><td>wir <b>sind</b></td><td>wir <b>haben</b></td></tr>
+      <tr><td class="de">ihr</td><td>you (several friends)</td><td>ihr <b>seid</b></td><td>ihr <b>habt</b></td></tr>
+      <tr><td class="de">sie / Sie</td><td>they / you (formal)</td><td>sie <b>sind</b></td><td>sie <b>haben</b></td></tr>
+    </table>
+    <p style="margin-top:14px">Chant it three times, like a rap beat 🎤:</p>
+    <div class="chant">bin · bist · ist — sind · seid · sind</div>
+    <div class="chant">habe · hast · hat — haben · habt · haben</div>
+  </section>
+  <section class="block"><h3>💬 Real sentences</h3>
+    <div class="ex"><button class="say" data-say="Ich bin müde.">🔊</button>Ich <span class="hl">bin</span> müde.<span class="en">I am tired.</span></div>
+    <div class="ex"><button class="say" data-say="Du bist super!">🔊</button>Du <span class="hl">bist</span> super!<span class="en">You are great!</span></div>
+    <div class="ex"><button class="say" data-say="Sie ist Lehrerin.">🔊</button>Sie <span class="hl">ist</span> Lehrerin.<span class="en">She is a teacher.</span></div>
+    <div class="ex"><button class="say" data-say="Wir haben Hunger.">🔊</button>Wir <span class="hl">haben</span> Hunger.<span class="en">We are hungry (“we have hunger”).</span></div>
+    <div class="ex"><button class="say" data-say="Er hat einen Hund.">🔊</button>Er <span class="hl">hat</span> einen Hund.<span class="en">He has a dog.</span></div>
+    <div class="ex"><button class="say" data-say="Habt ihr Zeit?">🔊</button><span class="hl">Habt</span> ihr Zeit?<span class="en">Do you (guys) have time?</span></div>
+    <div class="memo"><span class="tag">Watch out</span>No “a” before jobs: <i>Ich bin Lehrer</i> = I am <u>a</u> teacher. Women usually add <b>-in</b>: Lehrer → Lehrer<b>in</b>, Student → Student<b>in</b>.</div>
+  </section>`,
+  vocab:[
+    ["müde","tired",""],["glücklich","happy","think “lucky”"],["traurig","sad",""],["krank","ill / sick",""],
+    ["nett","nice",""],["verheiratet","married",""],["ledig","single",""],["der Hunger","hunger","Ich habe Hunger."],
+    ["der Durst","thirst","Ich habe Durst."],["die Zeit","time","Ich habe keine Zeit."],["der Lehrer / die Lehrerin","teacher (m/f)",""],["der Student / die Studentin","student (m/f)",""]
+  ],
+  memos:[
+    "<b>sein looks like English:</b> <i>ich bin</i> ≈ “I've <b>been</b>”, <i>er ist</i> ≈ “he <b>is</b>”, <i>ich habe</i> ≈ “I <b>have</b>”. Same family!",
+    "<b>The sie-trap:</b> <i>sie</i> can mean <b>she</b>, <b>they</b> or (with a capital) formal <b>you</b>. The verb is your detective 🕵️: <i>sie <b>ist</b></i> = she is, <i>sie <b>sind</b></i> = they are.",
+    "<b>Germans “have” their feelings:</b> <i>Ich habe Hunger / Durst / Angst</i> (hunger / thirst / fear). But age uses sein: <i>Ich <b>bin</b> 20 Jahre alt.</i>",
+    "<b>ihr</b> is the German “y'all” 🤠: you, plural, informal."
+  ],
+  fact:"In 1963, US President John F. Kennedy said “<b>Ich bin ein Berliner</b>” in West Berlin as a gesture of solidarity. A Berliner is also a kind of doughnut, which has made the line a favourite joke ever since 🍩.",
+  cards:[["ich bin","I am"],["du bist","you are"],["wir sind","we are"],["ihr seid","you (all) are"],["er hat","he has"],["ich habe Hunger","I'm hungry"],["Ich habe Durst","I'm thirsty"],["glücklich","happy"]],
+  type:[
+    {p:"Ich ___ müde.", a:["bin"]},
+    {p:"Wir ______ Hunger.", a:["haben"]},
+    {p:"Ihr ____ nett.", a:["seid"]},
+    {p:"Er ___ ein Auto.", a:["hat"]},
+    {p:"Du ____ super!", a:["bist"]}
+  ],
+  quiz:[
+    {q:"Wir ___ aus Deutschland.", o:["sind","bin","seid"], a:0},
+    {q:"Du ___ eine Katze.", o:["hast","hat","habe"], a:0},
+    {q:"<i>Sie ist nett</i> means…", o:["She is nice","They are nice","You are nice"], a:0},
+    {q:"“I am thirsty” =", o:["Ich habe Durst","Ich bin Durst","Ich hat Durst"], a:0},
+    {q:"“She is a doctor” =", o:["Sie ist Ärztin","Sie ist eine Ärztin","Sie hat Ärztin"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 5 */
+{
+  id:"articles", emoji:"🎨", title:"der, die, das",
+  goals:["Understand the 3 genders","Use ending clues to guess the gender","Use ein / eine"],
+  intro:"Every German noun has a gender: masculine (<span class='der'>der</span>), feminine (<span class='die'>die</span>) or neuter (<span class='das'>das</span>). It's often not logical (a girl is neuter!), so we use colours and clever clues.",
+  html:`
+  <section class="block"><h3>🌈 The colour code</h3>
+    <div class="grid2">
+      <div class="mini"><h4 class="der">der · masculine · blue</h4>der Mann (man), der Tisch (table), der Hund (dog), der Montag</div>
+      <div class="mini"><h4 class="die">die · feminine · red</h4>die Frau (woman), die Katze (cat), die Zeitung, die Freiheit</div>
+      <div class="mini"><h4 class="das">das · neuter · green</h4>das Kind (child), das Haus, das Auto, das Mädchen (girl!)</div>
+      <div class="mini"><h4 class="pl">die · plural · purple</h4>ALL plurals use <b>die</b>: die Männer, die Kinder, die Häuser</div>
+    </div>
+    <div class="memo"><span class="tag">Golden rule</span>Never learn a noun on its own. Learn it with its article, like a <b>first name and surname</b>: not “Tisch” but “<span class="der">der</span> Tisch”. In your notebook, write it in its colour. Your visual memory will do the rest.</div>
+    <div class="memo"><span class="tag">Memory hook · Picture it</span>Imagine every <span class="der">der</span> noun is <b>freezing in blue ice</b> 🧊, every <span class="die">die</span> noun is <b>on fire</b> 🔥, every <span class="das">das</span> noun is <b>covered in grass</b> 🌿. A burning cat, a frozen table, a grassy house: you won't forget.</div>
+  </section>
+  <section class="block"><h3>🔍 Endings that give the game away</h3>
+    <table><tr><th>Ending / group</th><th>Gender</th><th>Examples</th></tr>
+      <tr><td class="de">-ung, -heit, -keit, -schaft, -ion, -tät</td><td class="die">die (100%)</td><td>die Wohnung, die Freiheit, die Nation, die Universität</td></tr>
+      <tr><td class="de">-chen, -lein (small things)</td><td class="das">das (100%)</td><td>das Mädchen, das Brötchen, das Kätzchen</td></tr>
+      <tr><td class="de">-e (most of the time)</td><td class="die">die</td><td>die Katze, die Lampe, die Schule</td></tr>
+      <tr><td class="de">-um, -ment, -o</td><td class="das">das</td><td>das Museum, das Instrument, das Auto</td></tr>
+      <tr><td class="de">days, months, seasons</td><td class="der">der</td><td>der Montag, der Mai, der Winter</td></tr>
+      <tr><td class="de">-er (people, tools), -ismus</td><td class="der">der</td><td>der Lehrer, der Computer, der Tourismus</td></tr>
+    </table>
+    <div class="memo"><span class="tag">Memory hook</span><b>-chen makes things tiny and cute</b>, and tiny cute things lose their gender: <i>das Mädchen</i> (little maiden), <i>das Kätzchen</i> (kitten). Picture a tiny green baby 👶🌿.</div>
+    <div class="memo"><span class="tag">Memory hook</span>The feminine endings in one silly sentence: “<b>Hung</b>ry <b>Heid</b>i's <b>Kei</b>th <b>shaft</b>ed the l<b>ion</b>” → -ung, -heit, -keit, -schaft, -ion. 🦁</div>
+  </section>
+  <section class="block"><h3>✋ “a / an”: ein & eine</h3>
+    <div class="grid3">
+      <div class="mini"><span class="der">der</span> Mann → <span class="der">ein</span> Mann</div>
+      <div class="mini"><span class="die">die</span> Frau → <span class="die">eine</span> Frau</div>
+      <div class="mini"><span class="das">das</span> Kind → <span class="das">ein</span> Kind</div>
+    </div>
+    <div class="memo"><span class="tag">Memory hook</span>The feminine one keeps her <b>-e</b>: <span class="die">di<b>e</b></span> ends in e, so <span class="die">ein<b>e</b></span> does too. Masculine and neuter share the short <i>ein</i>.</div>
+  </section>`,
+  vocab:[
+    ["der Mann","man",""],["die Frau","woman",""],["das Kind","child",""],["der Tisch","table",""],
+    ["der Stuhl","chair",""],["die Lampe","lamp","-e → die"],["das Buch","book",""],["das Auto","car","-o → das"],
+    ["die Tür","door",""],["das Fenster","window",""],["der Hund","dog",""],["die Katze","cat","-e → die"],
+    ["die Zeitung","newspaper","-ung → die"],["das Mädchen","girl","-chen → das"],["der Computer","computer","-er → der"],["die Stadt","city / town",""],
+    ["das Handy","mobile phone","a German “English” word!"],["die Kinder","children (pl.)","plural → die"]
+  ],
+  fact:"In his famous 1880 essay <i>The Awful German Language</i>, Mark Twain joked that in German a young lady has no gender while a turnip is feminine. He wasn't wrong: <i>das Mädchen</i> but <i>die Rübe</i>! 😄",
+  cards:[["Tisch","der Tisch · table"],["Zeitung","die Zeitung · newspaper"],["Mädchen","das Mädchen · girl"],["Montag","der Montag · Monday"],["Freiheit","die Freiheit · freedom"],["Kind","das Kind · child"],["Museum","das Museum"],["Lampe","die Lampe · lamp"]],
+  type:[
+    {p:"___ Zeitung (newspaper)", a:["die"]},
+    {p:"___ Mädchen (girl)", a:["das"]},
+    {p:"___ Winter", a:["der"]},
+    {p:"a woman: ____ Frau", a:["eine"]},
+    {p:"___ Häuser (houses, plural)", a:["die"]}
+  ],
+  quiz:[
+    {q:"___ Wohnung (flat)", o:["die","der","das"], a:0},
+    {q:"___ Brötchen (bread roll)", o:["das","der","die"], a:0},
+    {q:"___ Sommer (summer)", o:["der","die","das"], a:0},
+    {q:"Plural: ___ Kinder", o:["die","der","das"], a:0},
+    {q:"“a cat” =", o:["eine Katze","ein Katze","der Katze"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 6 */
+{
+  id:"present", emoji:"🏃", title:"Everyday verbs",
+  goals:["Conjugate regular verbs","Put the verb in position 2","Say what you do every day"],
+  intro:"Most German verbs end in <b>-en</b> in the dictionary: <i>wohnen</i> (to live), <i>spielen</i> (to play). Remove the -en, add the right ending, done! It's a machine.",
+  html:`
+  <section class="block"><h3>⚙️ The verb machine</h3>
+    <p><b>wohnen</b> → stem <b>wohn-</b> + ending</p>
+    <table><tr><th>Person</th><th>Ending</th><th>wohnen</th><th>spielen</th><th>trinken</th></tr>
+      <tr><td>ich</td><td><b>-e</b></td><td>wohn<b>e</b></td><td>spiel<b>e</b></td><td>trink<b>e</b></td></tr>
+      <tr><td>du</td><td><b>-st</b></td><td>wohn<b>st</b></td><td>spiel<b>st</b></td><td>trink<b>st</b></td></tr>
+      <tr><td>er/sie/es</td><td><b>-t</b></td><td>wohn<b>t</b></td><td>spiel<b>t</b></td><td>trink<b>t</b></td></tr>
+      <tr><td>wir</td><td><b>-en</b></td><td>wohn<b>en</b></td><td>spiel<b>en</b></td><td>trink<b>en</b></td></tr>
+      <tr><td>ihr</td><td><b>-t</b></td><td>wohn<b>t</b></td><td>spiel<b>t</b></td><td>trink<b>t</b></td></tr>
+      <tr><td>sie/Sie</td><td><b>-en</b></td><td>wohn<b>en</b></td><td>spiel<b>en</b></td><td>trink<b>en</b></td></tr>
+    </table>
+    <p style="margin-top:12px">Chant the endings 🥁:</p><div class="chant">E · ST · T — EN · T · EN</div>
+    <div class="memo"><span class="tag">Memory hook</span>The endings are a heartbeat: “<b>e-st-t</b>” (quick-quick-quick), then “<b>en-t-en</b>” (slow-quick-slow) 💓. And <b>wir</b> and <b>sie</b> always look exactly like the dictionary form. Free points!</div>
+    <div class="memo"><span class="tag">Small exception</span>If the stem ends in <b>-t</b> or <b>-d</b>, add an extra <b>e</b> so you can pronounce it: arbeiten → du arbeit<b>e</b>st, er arbeit<b>e</b>t. If it ends in <b>-s/-ß/-z</b>, du only adds <b>-t</b>: heißen → du heißt.</div>
+  </section>
+  <section class="block"><h3>🚦 Word order: the verb is always second</h3>
+    <div class="ex"><button class="say" data-say="Ich wohne in Berlin.">🔊</button>Ich <span class="hl">wohne</span> in Berlin.<span class="en">I live in Berlin.</span></div>
+    <div class="ex"><button class="say" data-say="Heute spiele ich Fußball.">🔊</button>Heute <span class="hl">spiele</span> ich Fußball.<span class="en">Today I play football.</span></div>
+    <div class="ex"><button class="say" data-say="Am Abend trinken wir Tee.">🔊</button>Am Abend <span class="hl">trinken</span> wir Tee.<span class="en">In the evening we drink tea.</span></div>
+    <div class="ex"><button class="say" data-say="Jeden Tag lerne ich Deutsch.">🔊</button>Jeden Tag <span class="hl">lerne</span> ich Deutsch.<span class="en">Every day I learn German.</span></div>
+    <div class="memo"><span class="tag">Memory hook</span><b>The verb is the second guest at the party</b> 🎉. Anyone can arrive first (a person, a time, a place), but the verb <b>always</b> rings the doorbell second. If “heute” arrives first, the subject has to wait behind the verb.</div>
+  </section>`,
+  vocab:[
+    ["wohnen","to live (somewhere)",""],["spielen","to play",""],["trinken","to drink","drink ↔ trink"],
+    ["kommen","to come",""],["machen","to make / to do","Was machst du?"],["lernen","to learn","learn ↔ lern"],
+    ["kaufen","to buy",""],["gehen","to go (on foot)",""],["hören","to hear / listen to",""],
+    ["arbeiten","to work","du arbeitest"],["kochen","to cook",""],["brauchen","to need",""],
+    ["kosten","to cost","es kostet"],["fragen","to ask",""],["sagen","to say",""],["heute","today",""],["jeden Tag","every day",""]
+  ],
+  fact:"German has no “-ing” form: <i>Ich lerne Deutsch</i> means both “I learn German” <b>and</b> “I am learning German”. One less thing to worry about! 🎉",
+  cards:[["ich lerne","I learn / I'm learning"],["du spielst","you play"],["er wohnt","he lives"],["wir trinken","we drink"],["Was machst du?","What are you doing?"],["du arbeitest","you work"],["brauchen","to need"],["heute","today"]],
+  type:[
+    {p:"Du ______ (wohnen) in Wien.", a:["wohnst"]},
+    {p:"Wir ________ (spielen) Karten.", a:["spielen"]},
+    {p:"Er _____ (lernen) Deutsch.", a:["lernt"]},
+    {p:"Ich ______ (trinken) Tee.", a:["trinke"]},
+    {p:"Sie (she) ________ (arbeiten) viel.", a:["arbeitet"]}
+  ],
+  quiz:[
+    {q:"Du ___ (lernen) Deutsch.", o:["lernst","lerne","lernt"], a:0},
+    {q:"Sie (she) ___ (spielen) Tennis.", o:["spielt","spielen","spielst"], a:0},
+    {q:"Which sentence is correct?", o:["Heute spiele ich Gitarre.","Heute ich spiele Gitarre.","Heute ich Gitarre spiele."], a:0},
+    {q:"Wir ___ (kaufen) Brot.", o:["kaufen","kauft","kaufe"], a:0},
+    {q:"Er ___ (arbeiten) in Köln.", o:["arbeitet","arbeitt","arbeiten"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 7 */
+{
+  id:"irregular", emoji:"🦎", title:"Shape-shifting verbs",
+  goals:["Spot verbs that change their vowel","Learn the 3 vowel-change groups","Use the most common ones"],
+  intro:"Some verbs are chameleons 🦎: they change their vowel, but <b>only with du and er/sie/es</b>. Everything else stays normal. Learn the pattern once and you've got dozens of verbs.",
+  html:`
+  <section class="block"><h3>🦎 The three disguises</h3>
+    <div class="grid3">
+      <div class="mini"><h4>e → i</h4>
+        <b>essen</b> (eat): du <b>i</b>sst, er <b>i</b>sst<br><b>sprechen</b> (speak): du spr<b>i</b>chst, er spr<b>i</b>cht<br><b>nehmen</b> (take): du n<b>i</b>mmst, er n<b>i</b>mmt<br><b>geben</b> (give): du g<b>i</b>bst, er g<b>i</b>bt<br><b>helfen</b> (help): du h<b>i</b>lfst, er h<b>i</b>lft</div>
+      <div class="mini"><h4>e → ie</h4>
+        <b>lesen</b> (read): du l<b>ie</b>st, er l<b>ie</b>st<br><b>sehen</b> (see): du s<b>ie</b>hst, er s<b>ie</b>ht</div>
+      <div class="mini"><h4>a → ä · au → äu</h4>
+        <b>fahren</b> (drive/ride): du f<b>ä</b>hrst, er f<b>ä</b>hrt<br><b>schlafen</b> (sleep): du schl<b>ä</b>fst, er schl<b>ä</b>ft<br><b>tragen</b> (carry/wear): du tr<b>ä</b>gst, er tr<b>ä</b>gt<br><b>laufen</b> (run): du l<b>äu</b>fst, er l<b>äu</b>ft</div>
+    </div>
+    <h4 style="margin-top:16px">Full example: fahren</h4>
+    <table><tr><td>ich fahre</td><td>wir fahren</td></tr>
+      <tr><td>du <span class="hl">fährst</span> 🦎</td><td>ihr fahrt</td></tr>
+      <tr><td>er/sie/es <span class="hl">fährt</span> 🦎</td><td>sie/Sie fahren</td></tr></table>
+    <div class="memo"><span class="tag">Memory hook</span><b>Only the “middle children” change</b>: du and er/sie/es sit in the middle of the table (rows 2 and 3). Ich, wir, ihr, sie stay perfectly normal. 👨‍👩‍👧‍👦</div>
+    <div class="memo"><span class="tag">Memory hook</span><b>The umlaut is a party hat</b> 🎉: when <i>a</i> goes out with du or er, it puts on its two-dot hat: f<b>a</b>hren → du f<b>ä</b>hrst.</div>
+  </section>
+  <section class="block"><h3>💬 In action</h3>
+    <div class="ex"><button class="say" data-say="Sprichst du Deutsch?">🔊</button><span class="hl">Sprichst</span> du Deutsch?<span class="en">Do you speak German?</span></div>
+    <div class="ex"><button class="say" data-say="Er isst gern Pizza.">🔊</button>Er <span class="hl">isst</span> gern Pizza.<span class="en">He likes eating pizza.</span></div>
+    <div class="ex"><button class="say" data-say="Sie liest ein Buch.">🔊</button>Sie <span class="hl">liest</span> ein Buch.<span class="en">She is reading a book.</span></div>
+    <div class="ex"><button class="say" data-say="Der Zug fährt um acht Uhr.">🔊</button>Der Zug <span class="hl">fährt</span> um acht Uhr.<span class="en">The train leaves at eight.</span></div>
+    <div class="ex"><button class="say" data-say="Das Baby schläft.">🔊</button>Das Baby <span class="hl">schläft</span>.<span class="en">The baby is sleeping.</span></div>
+  </section>`,
+  vocab:[
+    ["essen","to eat","du isst, er isst"],["sprechen","to speak","du sprichst"],["nehmen","to take","du nimmst"],
+    ["geben","to give","du gibst"],["helfen","to help","du hilfst"],["lesen","to read","du liest"],
+    ["sehen","to see","du siehst"],["fahren","to drive / ride / go (by vehicle)","du fährst"],["schlafen","to sleep","du schläfst"],
+    ["laufen","to run / walk","du läufst"],["tragen","to carry / wear","du trägst"],["der Zug","train",""]
+  ],
+  fact:"<i>fahren</i> is a cousin of the old English word “fare”: that's why we say “<b>fare</b>well” (= travel well) and pay a bus <b>fare</b>. 🚌",
+  cards:[["du isst","you eat"],["er spricht","he speaks"],["sie liest","she reads"],["du fährst","you drive"],["er schläft","he sleeps"],["du siehst","you see"],["sie nimmt","she takes"],["er hilft","he helps"]],
+  type:[
+    {p:"Du ____ (essen) Pizza.", a:["isst"]},
+    {p:"Er _____ (fahren) nach Berlin.", a:["fährt"]},
+    {p:"Sie ____ (lesen) ein Buch.", a:["liest"]},
+    {p:"______ (sprechen) du Englisch?", a:["Sprichst"]},
+    {p:"Wir ______ (schlafen) lange.", a:["schlafen"]}
+  ],
+  quiz:[
+    {q:"Er ___ (sehen) einen Film.", o:["sieht","seht","siet"], a:0},
+    {q:"Ich ___ (fahren) nach Hamburg.", o:["fahre","fähre","fährt"], a:0},
+    {q:"Du ___ (nehmen) den Bus.", o:["nimmst","nehmst","nimmt"], a:0},
+    {q:"Which persons change their vowel?", o:["du and er/sie/es","ich and wir","ihr and sie"], a:0},
+    {q:"Sie (she) ___ (laufen) jeden Morgen.", o:["läuft","lauft","läufst"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 8 */
+{
+  id:"questions", emoji:"❓", title:"Asking questions",
+  goals:["Use all the W-question words","Ask yes/no questions","Answer with ja, nein and doch"],
+  intro:"Two kinds of question: <b>W-questions</b> (who, what, where…) and <b>yes/no questions</b>. Both are easy once you know where the verb goes.",
+  vocab:[
+    ["Wer?","Who?","⚠️ not “where”!"],["Was?","What?",""],["Wo?","Where?","⚠️ not “who”!"],
+    ["Woher?","Where from?",""],["Wohin?","Where to?",""],["Wann?","When?",""],
+    ["Wie?","How?",""],["Warum?","Why?",""],["Wie viel?","How much?",""],["Wie viele?","How many?",""],
+    ["Welcher / welche / welches?","Which?",""],["ja","yes",""],["nein","no",""],["doch","yes, actually!","answers a negative question"]
+  ],
+  html:`
+  <section class="block"><h3>🔀 Two question shapes</h3>
+    <div class="grid2">
+      <div class="mini"><h4>W-question</h4>W-word + <b>verb</b> + subject…<br>
+        <div class="ex"><button class="say" data-say="Wo wohnst du?">🔊</button>Wo <span class="hl">wohnst</span> du?</div>
+        <div class="ex"><button class="say" data-say="Was machst du heute?">🔊</button>Was <span class="hl">machst</span> du heute?</div>
+        The verb is still in position 2!</div>
+      <div class="mini"><h4>Yes/no question</h4><b>Verb</b> jumps to the front:<br>
+        <div class="ex"><button class="say" data-say="Wohnst du in Paris?">🔊</button><span class="hl">Wohnst</span> du in Paris?</div>
+        <div class="ex"><button class="say" data-say="Hast du Zeit?">🔊</button><span class="hl">Hast</span> du Zeit?</div>
+        Answer: <i>Ja!</i> or <i>Nein!</i></div>
+    </div>
+    <div class="memo"><span class="tag">The magic word: doch</span>If someone asks a <b>negative</b> question and the answer is yes, say <b>doch</b> 💥. <i>Kommst du nicht? – Doch!</i> (“Aren't you coming?” – “Yes I am!”). It's the word for contradicting someone.</div>
+  </section>`,
+  memos:[
+    "<b>The W-twins trap:</b> <i>Wer</i> = <b>who</b>, <i>Wo</i> = <b>where</b>. They look swapped compared to English. Hook: “<b>Wo</b>? → <b>Wo</b>rld map 🗺️” (places). “<b>Wer</b>? → <b>Wer</b>ewolf 🐺” (a creature… sort of a person).",
+    "<b>Woher / Wohin:</b> <i>her</i> comes towards you, <i>hin</i> goes away from you. Like a boomerang 🪃: it comes back <b>her</b>e. Woher? = from where. Wohin? = where to.",
+    "<b>Warum = why</b>: imagine someone asking “why?” while their stomach makes a <b>war</b> drum 🥁 noise: <b>War-um</b>?"
+  ],
+  dialogue:[
+    ["Lisa","Wer bist du?","Who are you?"],
+    ["Max","Ich bin Max. Und du?","I'm Max. And you?"],
+    ["Lisa","Ich bin Lisa. Wo wohnst du?","I'm Lisa. Where do you live?"],
+    ["Max","In Hamburg. Wohnst du auch in Hamburg?","In Hamburg. Do you live in Hamburg too?"],
+    ["Lisa","Nein, in München. Warum lernst du Deutsch?","No, in Munich. Why are you learning German?"],
+    ["Max","Weil es Spaß macht! Kommst du nicht aus Österreich?","Because it's fun! Aren't you from Austria?"],
+    ["Lisa","Doch! Aus Wien.","Yes I am! From Vienna."]
+  ],
+  fact:"In German, a yes/no question goes <b>up</b> in tone at the end ↗️, just like in English, but a W-question usually goes <b>down</b> ↘️. Listen to the examples and copy the melody.",
+  cards:[["Wer?","Who?"],["Wo?","Where?"],["Wann?","When?"],["Warum?","Why?"],["Woher kommst du?","Where are you from?"],["Wie viel kostet das?","How much is that?"],["Wohin gehst du?","Where are you going?"],["doch","yes (contradicting)"]],
+  type:[
+    {p:"___ wohnst du? (Where)", a:["Wo"]},
+    {p:"___ heißt du? (How)", a:["Wie"]},
+    {p:"___ ist das? (Who)", a:["Wer"]},
+    {p:"______ kommst du? (Where from)", a:["Woher"]},
+    {p:"Bist du nicht müde? – ____! (Yes I am!)", a:["Doch"]}
+  ],
+  quiz:[
+    {q:"<i>Wo</i> means…", o:["where","who","why"], a:0},
+    {q:"Turn “Du spielst Klavier” into a yes/no question:", o:["Spielst du Klavier?","Du spielst Klavier?","Klavier spielst du?"], a:0},
+    {q:"“When are you coming?” =", o:["Wann kommst du?","Wie kommst du?","Wo kommst du?"], a:0},
+    {q:"“Where are you going (to)?” =", o:["Wohin gehst du?","Woher gehst du?","Wer gehst du?"], a:0},
+    {q:"<i>Hast du keinen Hunger?</i> You ARE hungry. You say…", o:["Doch!","Ja!","Nein!"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 9 */
+{
+  id:"negation", emoji:"🙅", title:"No, not, none: nicht & kein",
+  goals:["Say no to anything","Choose between nicht and kein","Use nichts, nie, niemand"],
+  intro:"German has two ways to say “not”: <b>kein</b> for nouns and <b>nicht</b> for everything else. One simple test tells you which.",
+  html:`
+  <section class="block"><h3>⚖️ kein or nicht?</h3>
+    <div class="grid2">
+      <div class="mini"><h4>kein = “no / not a / not any”</h4>Use it with a noun that would have <b>ein</b> or <b>no article</b>.<br>
+        <div class="ex"><button class="say" data-say="Ich habe kein Auto.">🔊</button>Ich habe <span class="hl">kein</span> Auto.<span class="en">I don't have a car.</span></div>
+        <div class="ex"><button class="say" data-say="Ich habe keine Zeit.">🔊</button>Ich habe <span class="hl">keine</span> Zeit.<span class="en">I have no time.</span></div>
+        <div class="ex"><button class="say" data-say="Das ist kein Problem.">🔊</button>Das ist <span class="hl">kein</span> Problem.<span class="en">That's no problem.</span></div></div>
+      <div class="mini"><h4>nicht = “not”</h4>Use it with verbs, adjectives, names, and nouns with der/die/das.<br>
+        <div class="ex"><button class="say" data-say="Ich komme nicht.">🔊</button>Ich komme <span class="hl">nicht</span>.<span class="en">I'm not coming.</span></div>
+        <div class="ex"><button class="say" data-say="Ich bin nicht müde.">🔊</button>Ich bin <span class="hl">nicht</span> müde.<span class="en">I'm not tired.</span></div>
+        <div class="ex"><button class="say" data-say="Das ist nicht mein Hund.">🔊</button>Das ist <span class="hl">nicht</span> mein Hund.<span class="en">That's not my dog.</span></div></div>
+    </div>
+    <div class="memo"><span class="tag">Memory hook · The K-test</span><b>kein = K + ein</b>. If the positive sentence has <i>ein</i> (or nothing) before the noun, just stick a <b>K</b> on it: <i>ein Auto → <b>k</b>ein Auto</i>. Otherwise: <b>nicht</b>. ✅</div>
+    <div class="memo"><span class="tag">Endings</span>kein behaves exactly like ein: <span class="der">kein</span> Hund · <span class="die">keine</span> Katze · <span class="das">kein</span> Kind · <span class="pl">keine</span> Kinder (plural adds -e).</div>
+    <div class="memo"><span class="tag">Where does nicht go?</span>Usually at the <b>end</b> of a simple sentence (<i>Ich arbeite heute nicht</i>) or right <b>before</b> the word it negates (<i>nicht müde, nicht heute</i>).</div>
+  </section>`,
+  vocab:[
+    ["nicht","not",""],["kein / keine","no / not a",""],["nichts","nothing","Ich sage nichts."],
+    ["nie","never","Ich trinke nie Kaffee."],["niemand","nobody",""],["noch nicht","not yet",""],
+    ["nicht mehr","not any more",""],["auch nicht","not … either",""],["Kein Problem!","No problem!",""],["Ich weiß nicht.","I don't know.",""]
+  ],
+  fact:"Germans love a straightforward <b>Nein</b>. It isn't rude, just clear. And <i>Nein, danke</i> is the perfect polite refusal when someone offers you more food 🍰.",
+  cards:[["nicht","not"],["kein Auto","no car"],["nichts","nothing"],["nie","never"],["niemand","nobody"],["noch nicht","not yet"],["Kein Problem!","No problem!"],["Ich weiß nicht.","I don't know."]],
+  type:[
+    {p:"Ich habe _____ Zeit. (no)", a:["keine"]},
+    {p:"Ich bin _____ müde. (not)", a:["nicht"]},
+    {p:"Das ist ____ Hund. (not a)", a:["kein"]},
+    {p:"Er kommt heute _____.", a:["nicht"]},
+    {p:"I drink <b>never</b> coffee: Ich trinke ___ Kaffee.", a:["nie"]}
+  ],
+  quiz:[
+    {q:"I have no brother: Ich habe ___ Bruder.", o:["keinen","nicht","kein"], a:0, note:"(Bruder is masculine and the object, so keinen. You'll learn why in Chapter 13!)"},
+    {q:"She isn't nice: Sie ist ___ nett.", o:["nicht","kein","keine"], a:0},
+    {q:"I don't have a car: Ich habe ___ Auto.", o:["kein","nicht","keine"], a:0},
+    {q:"<i>nichts</i> means…", o:["nothing","never","nobody"], a:0},
+    {q:"“I'm not working today” =", o:["Ich arbeite heute nicht.","Ich nicht arbeite heute.","Ich arbeite kein heute."], a:0}
+  ]
+},
+/* ---------------------------------------------------- 10 */
+{
+  id:"family", emoji:"👨‍👩‍👧", title:"Family & “my / your”",
+  goals:["Name your family members","Use mein, dein, sein, ihr","Introduce someone: Das ist…"],
+  intro:"Time to talk about the people you love (and your annoying little brother). You'll also learn how to say <i>my, your, his, her</i>.",
+  vocab:[
+    ["die Familie","family",""],["die Eltern","parents (pl.)","always plural"],["der Vater","father",""],
+    ["die Mutter","mother",""],["der Bruder","brother",""],["die Schwester","sister",""],
+    ["die Geschwister","siblings (pl.)",""],["der Sohn","son",""],["die Tochter","daughter",""],
+    ["der Opa / der Großvater","grandpa / grandfather",""],["die Oma / die Großmutter","grandma / grandmother",""],
+    ["der Onkel","uncle",""],["die Tante","aunt",""],["der Mann","husband (also: man)",""],["die Frau","wife (also: woman)",""],
+    ["der Freund / die Freundin","friend / boyfriend / girlfriend",""],["das Baby","baby",""]
+  ],
+  html:`
+  <section class="block"><h3>🫵 my, your, his, her…</h3>
+    <table><tr><th>Pronoun</th><th>Possessive</th><th><span class="der">der</span> / <span class="das">das</span> word</th><th><span class="die">die</span> / <span class="pl">plural</span> word</th></tr>
+      <tr><td>ich</td><td>my</td><td><b>mein</b> Vater</td><td><b>meine</b> Mutter</td></tr>
+      <tr><td>du</td><td>your</td><td><b>dein</b> Bruder</td><td><b>deine</b> Schwester</td></tr>
+      <tr><td>er / es</td><td>his / its</td><td><b>sein</b> Sohn</td><td><b>seine</b> Tochter</td></tr>
+      <tr><td>sie</td><td>her</td><td><b>ihr</b> Onkel</td><td><b>ihre</b> Tante</td></tr>
+      <tr><td>wir</td><td>our</td><td><b>unser</b> Opa</td><td><b>unsere</b> Oma</td></tr>
+      <tr><td>ihr</td><td>your (pl.)</td><td><b>euer</b> Kind</td><td><b>eure</b> Eltern</td></tr>
+      <tr><td>sie / Sie</td><td>their / your (formal)</td><td><b>ihr / Ihr</b> Baby</td><td><b>ihre / Ihre</b> Kinder</td></tr>
+    </table>
+    <div class="memo"><span class="tag">Memory hook</span><b>The possessives are ein's family</b> 👪: m-<b>ein</b>, d-<b>ein</b>, s-<b>ein</b> all rhyme with <i>ein</i> and take the same endings. Feminine and plural get the extra <b>-e</b>, just like <i>eine</i>.</div>
+    <div class="memo"><span class="tag">Watch out</span><b>sein</b> means both “to be” and “his”. Context makes it obvious: <i>Sein Bruder ist nett</i> = His brother is nice.</div>
+  </section>`,
+  dialogue:[
+    ["Jana","Ist das deine Familie?","Is that your family?"],
+    ["Ben","Ja! Das ist mein Vater und das ist meine Mutter.","Yes! That's my father and that's my mother."],
+    ["Jana","Und wer ist das?","And who is that?"],
+    ["Ben","Das ist meine Schwester Lea. Sie ist zwölf.","That's my sister Lea. She's twelve."],
+    ["Jana","Hast du auch einen Bruder?","Do you have a brother too?"],
+    ["Ben","Nein, ich habe keinen Bruder. Aber ich habe einen Hund! 🐶","No, I don't have a brother. But I have a dog!"]
+  ],
+  memos:[
+    "<b>Eltern</b> looks like “elder” in English, and your parents are your elders 👴👵.",
+    "<b>Geschwister</b> contains <b>Schwester</b> (sister), but it means brothers <i>and</i> sisters together: siblings.",
+    "<b>Oma & Opa</b> are used by everyone, even adults and in the news. Much more common than Großmutter / Großvater."
+  ],
+  fact:"<i>Mein Freund</i> can mean “my friend” or “my boyfriend”! To make it clear it's just a friend, Germans say <i>ein Freund von mir</i> (a friend of mine). 😉",
+  cards:[["die Eltern","parents"],["die Geschwister","siblings"],["die Tochter","daughter"],["der Sohn","son"],["meine Mutter","my mother"],["sein Bruder","his brother"],["ihre Tante","her aunt"],["unser Opa","our grandpa"]],
+  type:[
+    {p:"Das ist _____ Mutter. (my)", a:["meine"]},
+    {p:"____ Vater ist Lehrer. (my)", a:["Mein"]},
+    {p:"Wie heißt ____ Bruder? (your, du)", a:["dein"]},
+    {p:"The parents: die ______", a:["Eltern"]},
+    {p:"Anna and ____ Schwester (her)", a:["ihre"]}
+  ],
+  quiz:[
+    {q:"“my sister” =", o:["meine Schwester","mein Schwester","meiner Schwester"], a:0},
+    {q:"<i>die Geschwister</i> are…", o:["brothers and sisters","grandparents","cousins"], a:0},
+    {q:"Tom and ___ Vater (his)", o:["sein","ihr","dein"], a:0},
+    {q:"“our children” =", o:["unsere Kinder","unser Kinder","eure Kinder"], a:0},
+    {q:"<i>die Tochter</i> is…", o:["the daughter","the aunt","the doctor"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 11 */
+{
+  id:"colors", emoji:"🌈", title:"Colours & describing things",
+  goals:["Name 12 colours","Use common adjectives and their opposites","Describe people and things"],
+  intro:"Make your German colourful! Good news: after <i>sein</i> (is / are), adjectives <b>never change</b>. <i>Das Auto ist rot. Die Blumen sind rot.</i> Easy.",
+  vocab:[
+    ["rot","red",""],["blau","blue",""],["gelb","yellow","g ↔ y: gelb ≈ yellow"],["grün","green",""],
+    ["schwarz","black",""],["weiß","white","Weißwein = white wine"],["grau","grey",""],["braun","brown",""],
+    ["orange","orange",""],["lila","purple",""],["rosa","pink",""],["bunt","colourful",""],
+    ["groß / klein","big, tall / small",""],["alt / jung","old / young",""],["alt / neu","old / new",""],
+    ["gut / schlecht","good / bad",""],["schön / hässlich","beautiful / ugly",""],["teuer / billig","expensive / cheap",""],
+    ["schnell / langsam","fast / slow",""],["heiß / kalt","hot / cold",""],["lustig","funny",""],["langweilig","boring","lit. “long-while-y”"]
+  ],
+  html:`
+  <section class="block"><h3>🎨 Colour palette <small>(click to hear)</small></h3>
+    <div class="cards" style="grid-template-columns:repeat(auto-fill,minmax(110px,1fr))">
+      ${[["rot","#d63c3c"],["blau","#2f6fd6"],["gelb","#f2c230"],["grün","#2f9a5a"],["schwarz","#1d1d1d"],["weiß","#ffffff"],["grau","#8a8f96"],["braun","#7a4c2a"],["orange","#f08a24"],["lila","#8a5cc7"],["rosa","#f4a6c4"],["bunt","linear-gradient(90deg,#d63c3c,#f2c230,#2f9a5a,#2f6fd6)"]].map(([w,c])=>`<button class="say" data-say="${w}" style="width:auto;height:auto;border-radius:12px;padding:0;overflow:hidden;border:1px solid var(--line)"><div style="height:46px;background:${c}"></div><div style="padding:6px;font-weight:700">${w}</div></button>`).join("")}
+    </div>
+  </section>
+  <section class="block"><h3>💬 Describing</h3>
+    <div class="ex"><button class="say" data-say="Der Himmel ist blau.">🔊</button>Der Himmel ist <span class="hl">blau</span>.<span class="en">The sky is blue.</span></div>
+    <div class="ex"><button class="say" data-say="Mein Opa ist alt, aber sehr lustig.">🔊</button>Mein Opa ist <span class="hl">alt</span>, aber sehr <span class="hl">lustig</span>.<span class="en">My grandpa is old, but very funny.</span></div>
+    <div class="ex"><button class="say" data-say="Das Handy ist zu teuer.">🔊</button>Das Handy ist zu <span class="hl">teuer</span>.<span class="en">The phone is too expensive.</span></div>
+    <div class="ex"><button class="say" data-say="Welche Farbe hat dein Auto?">🔊</button>Welche Farbe hat dein Auto?<span class="en">What colour is your car?</span></div>
+    <div class="memo"><span class="tag">Power-ups</span><b>sehr</b> = very · <b>zu</b> = too · <b>ziemlich</b> = quite · <b>nicht so</b> = not so. <i>Das ist sehr gut! Das ist zu kalt.</i></div>
+    <div class="memo"><span class="tag">Coming later</span>When the adjective comes <i>before</i> the noun (“the <b>red</b> car”), it takes endings: <i>das rot<b>e</b> Auto</i>. That's a level-2 topic. For now, stick to “X ist + adjective” and you're always right. 👍</div>
+  </section>`,
+  memos:[
+    "<b>schwarz</b>: think of <b>Schwarz</b>wald, the Black Forest 🌲🖤 (and its famous cake!).",
+    "<b>weiß</b> = white: <i>Weißwein</i> (white wine) 🥂. Pronounce it “vice”.",
+    "<b>teuer</b> sounds like “toy-er”: toys are always too <b>expensive</b> 🧸💸.",
+    "<b>billig</b> = cheap: a cheap <b>bill</b> 🧾.",
+    "<b>langweilig</b> = boring: literally “long-while-ish”. When it's boring, a while feels long ⏳."
+  ],
+  fact:"Colours make great idioms: <i>blau sein</i> (“to be blue”) means to be <b>drunk</b> 🍺, and <i>grün hinter den Ohren</i> (“green behind the ears”) means inexperienced. <i>Ins Blaue fahren</i> (“drive into the blue”) is a trip with no destination!",
+  cards:[["rot","red"],["gelb","yellow"],["schwarz","black"],["weiß","white"],["teuer","expensive"],["billig","cheap"],["langweilig","boring"],["lustig","funny"]],
+  type:[
+    {p:"The sky: Der Himmel ist ____.", a:["blau"]},
+    {p:"Snow: Der Schnee ist ____.", a:["weiß"]},
+    {p:"Grass: Das Gras ist ____.", a:["grün"]},
+    {p:"Opposite of <i>groß</i>:", a:["klein"]},
+    {p:"Opposite of <i>teuer</i>:", a:["billig"]}
+  ],
+  quiz:[
+    {q:"<i>gelb</i> is…", o:["yellow","green","grey"], a:0},
+    {q:"Opposite of <i>schnell</i>:", o:["langsam","langweilig","lustig"], a:0},
+    {q:"“The flowers are red” =", o:["Die Blumen sind rot.","Die Blumen sind rote.","Die Blumen ist rot."], a:0},
+    {q:"<i>Das ist zu teuer</i> means…", o:["That's too expensive","That's very cheap","That's too expensive for two"], a:0},
+    {q:"Someone who is <i>blau</i> is…", o:["drunk","sad","cold"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 12 */
+{
+  id:"time", emoji:"⏰", title:"Days, months & telling time",
+  goals:["Days of the week and months","Ask and tell the time","Make appointments: am, im, um"],
+  intro:"When are we meeting? What time is it? Let's sort out the calendar and the clock, including the famous German “half” trap.",
+  vocab:[
+    ["der Montag","Monday","Moon-day 🌙"],["der Dienstag","Tuesday",""],["der Mittwoch","Wednesday","mid-week"],
+    ["der Donnerstag","Thursday","Thunder-day ⚡"],["der Freitag","Friday",""],["der Samstag","Saturday",""],
+    ["der Sonntag","Sunday","Sun-day ☀️"],["das Wochenende","weekend",""],["heute","today",""],
+    ["morgen","tomorrow",""],["gestern","yesterday",""],["der Morgen","morning",""],
+    ["der Mittag","midday",""],["der Abend","evening",""],["die Nacht","night",""],
+    ["die Uhr","clock / o'clock",""],["die Stunde","hour",""],["die Minute","minute",""],["jetzt","now",""]
+  ],
+  html:`
+  <section class="block"><h3>📅 Months & seasons</h3>
+    <p><b>Months</b> (all <span class="der">der</span>): Januar · Februar · März · April · Mai · Juni · Juli · August · September · Oktober · November · Dezember</p>
+    <p><b>Seasons</b> (all <span class="der">der</span>): der Frühling 🌷 (spring) · der Sommer ☀️ · der Herbst 🍂 (autumn) · der Winter ❄️</p>
+    <div class="memo"><span class="tag">Memory hook · am, im, um</span>
+      <b>am</b> + days & parts of the day: <i>am Montag, am Wochenende, am Abend</i><br>
+      <b>im</b> + months & seasons: <i>im Mai, im Winter</i><br>
+      <b>um</b> + clock times: <i>um acht Uhr</i><br>
+      Picture it: <b>am</b> = a d<b>a</b>y in your c<b>a</b>lendar 📅 · <b>im</b> = <b>in</b>side a whole month or season 🍂 · <b>um</b> = the hands going <b>um</b> (around) the clock face 🕗.</div>
+    <div class="memo"><span class="tag">Watch out</span><b>morgen</b> (small m) = tomorrow · <b>der Morgen</b> (capital M) = the morning. So <i>morgen früh</i> = tomorrow morning.</div>
+  </section>
+  <section class="block"><h3>🕒 What time is it?</h3>
+    <div class="ex"><button class="say" data-say="Wie spät ist es?">🔊</button>Wie spät ist es? / Wie viel Uhr ist es?<span class="en">What time is it?</span></div>
+    <div class="ex"><button class="say" data-say="Es ist drei Uhr.">🔊</button>Es ist drei Uhr.<span class="en">3:00</span></div>
+    <div class="ex"><button class="say" data-say="Es ist Viertel nach drei.">🔊</button>Es ist Viertel nach drei.<span class="en">3:15 (quarter past three)</span></div>
+    <div class="ex"><button class="say" data-say="Es ist halb vier.">🔊</button>Es ist <span class="hl">halb vier</span>.<span class="en">3:30 ⚠️ (NOT 4:30!)</span></div>
+    <div class="ex"><button class="say" data-say="Es ist Viertel vor vier.">🔊</button>Es ist Viertel vor vier.<span class="en">3:45 (quarter to four)</span></div>
+    <div class="ex"><button class="say" data-say="Es ist zehn nach fünf.">🔊</button>Es ist zehn nach fünf.<span class="en">5:10</span></div>
+    <div class="ex"><button class="say" data-say="Der Zug kommt um vierzehn Uhr dreißig.">🔊</button>Der Zug kommt um 14:30 (vierzehn Uhr dreißig).<span class="en">Official times use the 24-hour clock.</span></div>
+    <div class="memo"><span class="tag">Memory hook · The halb trap</span><b>halb vier</b> = “<b>half way to</b> four” = 3:30. Germans look forward ⏩: they count the half hour towards the next hour. Picture a runner halfway to the finish line 🏃‍♂️🏁 numbered “4”.</div>
+    <div class="memo"><span class="tag">nach & vor</span><b>nach</b> = after / past (think “<b>n</b>ext”) · <b>vor</b> = before / to (think “<b>f</b>ore”, as in <i>before</i>).</div>
+  </section>`,
+  memos:[
+    "<b>Donnerstag</b> = Thor's day: <i>Donner</i> means thunder ⚡, and Thor is the thunder god (Thursday in English too!).",
+    "<b>Mittwoch</b> = literally “mid-week”. It's the only day with a totally logical name.",
+    "<b>Dienstag</b>: <i>Dienst</i> means “service” or “duty”: Tuesday is the first real duty day after Monday's warm-up 💼. <b>Freitag</b> = Friday, easy! <b>Samstag</b> ≈ Saturday (both start with S-a).",
+    "<b>Herbst</b> (autumn) ≈ “harvest” 🌾: the season of harvest."
+  ],
+  fact:"In German-speaking countries, the week starts on <b>Monday</b>, dates are written day.month.year (<i>24.12.2026</i>), and train stations and shops use the 24-hour clock.",
+  cards:[["Montag","Monday"],["Mittwoch","Wednesday"],["Donnerstag","Thursday"],["halb vier","3:30"],["Viertel nach zwei","2:15"],["morgen","tomorrow"],["gestern","yesterday"],["der Herbst","autumn"]],
+  type:[
+    {p:"Monday in German:", a:["Montag","der Montag"]},
+    {p:"3:30 = halb ____", a:["vier"]},
+    {p:"The day after Montag:", a:["Dienstag","der Dienstag"]},
+    {p:"Es ist acht ___. (o'clock)", a:["Uhr"]},
+    {p:"___ Mai (in May)", a:["im"]},
+    {p:"___ Montag (on Monday)", a:["am"]}
+  ],
+  quiz:[
+    {q:"<i>halb sieben</i> =", o:["6:30","7:30","7:15"], a:0},
+    {q:"<i>Viertel vor zehn</i> =", o:["9:45","10:15","10:45"], a:0},
+    {q:"“on Friday” =", o:["am Freitag","im Freitag","um Freitag"], a:0},
+    {q:"“at 8 o'clock” =", o:["um acht Uhr","am acht Uhr","im acht Uhr"], a:0},
+    {q:"<i>gestern</i> means…", o:["yesterday","tomorrow","today"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 13 */
+{
+  id:"accusative", emoji:"🎯", title:"The target: accusative",
+  goals:["Recognise the subject and the object","Change der → den, ein → einen","Use mich, dich, ihn…"],
+  intro:"When you <i>see a dog</i>, <i>buy a coffee</i> or <i>have a brother</i>, that thing is the <b>target</b> of the action (the direct object). In German, the target can change its article. But don't panic: <b>only the masculine changes</b>!",
+  html:`
+  <section class="block"><h3>🎯 Only der changes</h3>
+    <table><tr><th></th><th class="der">masculine</th><th class="die">feminine</th><th class="das">neuter</th><th class="pl">plural</th></tr>
+      <tr><td><b>Subject</b> (who does it)</td><td>der / ein</td><td>die / eine</td><td>das / ein</td><td>die / –</td></tr>
+      <tr><td><b>Target</b> (accusative)</td><td><span class="hl">den / einen</span></td><td>die / eine</td><td>das / ein</td><td>die / –</td></tr>
+    </table>
+    <div class="ex"><button class="say" data-say="Der Hund sieht den Mann.">🔊</button><span class="der">Der</span> Hund sieht <span class="hl">den</span> Mann.<span class="en">The dog sees the man.</span></div>
+    <div class="ex"><button class="say" data-say="Der Mann sieht den Hund.">🔊</button><span class="der">Der</span> Mann sieht <span class="hl">den</span> Hund.<span class="en">The man sees the dog.</span></div>
+    <div class="ex"><button class="say" data-say="Ich habe einen Bruder und eine Schwester.">🔊</button>Ich habe <span class="hl">einen</span> Bruder und eine Schwester.<span class="en">I have a brother and a sister.</span></div>
+    <div class="ex"><button class="say" data-say="Ich kaufe den Tisch.">🔊</button>Ich kaufe <span class="hl">den</span> Tisch.<span class="en">I'm buying the table.</span></div>
+    <div class="ex"><button class="say" data-say="Es gibt keinen Kaffee.">🔊</button>Es gibt <span class="hl">keinen</span> Kaffee.<span class="en">There's no coffee.</span></div>
+    <div class="memo"><span class="tag">Memory hook · The archery target</span>When a masculine word becomes the <b>target</b> 🎯, the arrow leaves a mark: an <b>N</b>. der → de<b>n</b>, ein → ein<b>en</b>, kein → kein<b>en</b>, mein → mein<b>en</b>. Women, things and groups are bulletproof 🛡️: nothing changes.</div>
+    <div class="memo"><span class="tag">Bonus</span>Because of these endings, German can shuffle word order: <i><span class="hl">Den</span> Mann sieht der Hund</i> still means the <b>dog</b> sees the man! The article tells you who's the target.</div>
+  </section>
+  <section class="block"><h3>👉 me, you, him… as targets</h3>
+    <table><tr><th>Subject</th><th>Target</th><th>Example</th></tr>
+      <tr><td>ich</td><td><b>mich</b></td><td>Er liebt mich. (He loves me.)</td></tr>
+      <tr><td>du</td><td><b>dich</b></td><td>Ich sehe dich. (I see you.)</td></tr>
+      <tr><td>er</td><td><b>ihn</b></td><td>Ich kenne ihn. (I know him.)</td></tr>
+      <tr><td>sie / es</td><td><b>sie / es</b></td><td>Ich mag sie. (I like her.)</td></tr>
+      <tr><td>wir</td><td><b>uns</b></td><td>Sie besucht uns. (She visits us.)</td></tr>
+      <tr><td>ihr</td><td><b>euch</b></td><td>Wir hören euch. (We hear you.)</td></tr>
+      <tr><td>sie / Sie</td><td><b>sie / Sie</b></td><td>Ich frage Sie. (I'm asking you.)</td></tr>
+    </table>
+    <div class="memo"><span class="tag">Memory hook</span><b>ihn ≈ him</b> (just drop the m and shuffle). And again, only “he” changes a lot: <b>er → ihn</b>, same as <b>der → den</b>. The masculine is the drama queen of German grammar 👑.</div>
+  </section>`,
+  vocab:[
+    ["sehen","to see","+ target"],["haben","to have","+ target"],["kaufen","to buy",""],["brauchen","to need",""],
+    ["suchen","to look for",""],["finden","to find",""],["kennen","to know (a person / place)",""],["lieben","to love",""],
+    ["besuchen","to visit",""],["es gibt","there is / there are","Es gibt einen Park."],["der Kaffee","coffee",""],["der Park","park",""]
+  ],
+  fact:"German has <b>four cases</b>: nominative (subject), accusative (target), dative (receiver) and genitive (owner). You've just mastered the two most common ones! 🏆",
+  cards:[["den Hund","the dog (as target)"],["einen Bruder","a brother (as target)"],["mich","me"],["dich","you (target)"],["ihn","him"],["uns","us"],["es gibt","there is / are"],["suchen","to look for"]],
+  type:[
+    {p:"Ich sehe ___ Hund. (the)", a:["den"]},
+    {p:"Ich habe _____ Bruder. (a)", a:["einen"]},
+    {p:"Ich kaufe ___ Lampe. (the, die Lampe)", a:["die"]},
+    {p:"Ich kenne ___. (him)", a:["ihn"]},
+    {p:"Liebst du ____? (me)", a:["mich"]}
+  ],
+  quiz:[
+    {q:"Ich brauche ___ Computer. (der Computer)", o:["einen","ein","eine"], a:0},
+    {q:"Wir besuchen ___ Stadt. (die Stadt)", o:["die","den","das"], a:0},
+    {q:"Er kauft ___ Auto. (das Auto)", o:["das","den","der"], a:0},
+    {q:"“I see him” =", o:["Ich sehe ihn.","Ich sehe er.","Ich sehe sein."], a:0},
+    {q:"<i>Den Hund sieht der Mann.</i> Who sees whom?", o:["The man sees the dog","The dog sees the man","Nobody knows"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 14 */
+{
+  id:"cafe", emoji:"☕", title:"Food & ordering at the café",
+  goals:["Order food and drinks politely","Ask for the bill and pay","Know key food words"],
+  intro:"Put everything together: you walk into a café, order a coffee and cake, and pay like a local. The magic phrase: <b>Ich möchte…</b> (I would like…).",
+  vocab:[
+    ["Ich möchte …","I would like …","the polite way to order"],["Ich nehme …","I'll have …","lit. I take"],["die Speisekarte","menu",""],
+    ["der Kaffee","coffee",""],["der Tee","tea",""],["das Wasser","water",""],
+    ["der Saft","juice","Apfelsaft = apple juice"],["das Bier","beer",""],["der Wein","wine",""],
+    ["die Milch","milk",""],["der Zucker","sugar",""],["der Kuchen","cake",""],
+    ["das Brot","bread",""],["das Brötchen","bread roll",""],["der Käse","cheese",""],
+    ["die Wurst","sausage",""],["das Ei","egg",""],["der Apfel","apple",""],
+    ["Die Rechnung, bitte!","The bill, please!",""],["Zahlen, bitte!","I'd like to pay!","lit. “pay, please”"],
+    ["Was kostet …?","How much is …?",""],["Stimmt so!","Keep the change!","lit. “it's right like that”"],
+    ["Guten Appetit!","Enjoy your meal!",""],["Prost!","Cheers!","look people in the eyes!"],["lecker","tasty / yummy",""]
+  ],
+  html:`
+  <section class="block"><h3>🍰 Ordering: the target strikes again!</h3>
+    <p>Whatever you order is the target, so masculine words take <b>einen</b>:</p>
+    <div class="ex"><button class="say" data-say="Ich möchte einen Kaffee, bitte.">🔊</button>Ich möchte <span class="hl">einen</span> Kaffee, bitte.<span class="en">der Kaffee → einen</span></div>
+    <div class="ex"><button class="say" data-say="Ich nehme eine Cola.">🔊</button>Ich nehme <span class="hl">eine</span> Cola.<span class="en">die Cola → eine</span></div>
+    <div class="ex"><button class="say" data-say="Ich möchte ein Stück Kuchen.">🔊</button>Ich möchte <span class="hl">ein</span> Stück Kuchen.<span class="en">das Stück → ein</span></div>
+    <div class="ex"><button class="say" data-say="Zwei Bier, bitte!">🔊</button>Zwei Bier, bitte!<span class="en">Drinks: no plural needed when ordering</span></div>
+    <div class="memo"><span class="tag">Memory hook</span><b>möchte = “would like”</b>: it sounds like “<b>Mmm</b>-ochte” 😋, the sound you make looking at cake. Conjugation: ich möchte, du möchtest, er möchte, wir möchten, ihr möchtet, sie möchten.</div>
+    <div class="memo"><span class="tag">Politeness</span><i>Ich will einen Kaffee</i> (“I want a coffee”) sounds like a toddler. Use <b>Ich möchte…</b> or <b>Ich hätte gern…</b> (I'd like to have…) and add <b>bitte</b>. 🙏</div>
+  </section>`,
+  dialogue:[
+    ["Kellner","Guten Tag! Was möchten Sie?","Hello! What would you like?"],
+    ["Sie","Ich möchte einen Kaffee mit Milch, bitte.","I'd like a coffee with milk, please."],
+    ["Kellner","Gern. Möchten Sie auch Kuchen?","Sure. Would you like some cake too?"],
+    ["Sie","Ja, ein Stück Apfelkuchen, bitte. Was kostet das?","Yes, a piece of apple cake, please. How much is that?"],
+    ["Kellner","Der Kaffee kostet drei Euro, der Kuchen vier Euro.","The coffee is three euros, the cake four."],
+    ["Sie","…Mmm, lecker! Zahlen, bitte!","…Mmm, yummy! I'd like to pay, please!"],
+    ["Kellner","Das macht sieben Euro.","That's seven euros."],
+    ["Sie","Acht Euro. Stimmt so!","Eight euros. Keep the change!"]
+  ],
+  memos:[
+    "<b>die Speisekarte</b>: <i>Speise</i> = dish, <i>Karte</i> = card. The “dish-card” 🍽️. (Don't ask for the <i>Menü</i>: that's the set meal of the day!)",
+    "<b>Brötchen</b> = “little bread” (remember -chen = small and cute, so <i>das</i>!) 🥖",
+    "<b>Stimmt so!</b> = “it's right like that”. Tell the waiter the total you want to pay, including the tip, when you hand over the money."
+  ],
+  fact:"<b>Kaffee und Kuchen</b> (coffee and cake) is a beloved afternoon tradition, usually around 3–4 pm, especially on Sundays. ☕🍰 In restaurants, tipping is usually done by rounding up, roughly 5–10%.",
+  cards:[["Ich möchte…","I would like…"],["die Speisekarte","menu"],["Die Rechnung, bitte!","The bill, please!"],["Stimmt so!","Keep the change!"],["lecker","yummy"],["Prost!","Cheers!"],["das Brötchen","bread roll"],["der Kuchen","cake"]],
+  type:[
+    {p:"Ich ______ einen Kaffee, bitte. (would like)", a:["möchte"]},
+    {p:"Die ________, bitte! (bill)", a:["Rechnung"]},
+    {p:"Was ______ das? (cost)", a:["kostet"]},
+    {p:"Cheers!", a:["Prost","Prost!"]},
+    {p:"Ich nehme _____ Tee. (a, der Tee)", a:["einen"]}
+  ],
+  quiz:[
+    {q:"The polite way to order:", o:["Ich möchte einen Tee.","Ich will einen Tee.","Gib mir Tee."], a:0},
+    {q:"Ich möchte ___ Saft. (der Saft)", o:["einen","ein","eine"], a:0},
+    {q:"You want to pay. You say…", o:["Zahlen, bitte!","Prost!","Guten Appetit!"], a:0},
+    {q:"<i>Stimmt so!</i> means…", o:["Keep the change!","That's wrong!","It's too expensive!"], a:0},
+    {q:"<i>lecker</i> means…", o:["tasty","late","cheap"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 15 */
+{
+  id:"hobbies", emoji:"⚽", title:"Hobbies & what you like",
+  goals:["Talk about hobbies","Use gern / nicht gern / lieber","Use mögen (to like)"],
+  intro:"What do you like doing? German has a super-simple trick: take any verb and add <b>gern</b> (gladly). <i>Ich koche gern</i> = I like cooking.",
+  vocab:[
+    ["lesen","to read",""],["schwimmen","to swim",""],["kochen","to cook",""],["tanzen","to dance",""],
+    ["reisen","to travel",""],["wandern","to hike","very German!"],["singen","to sing",""],["malen","to paint",""],
+    ["Musik hören","to listen to music",""],["Fahrrad fahren","to ride a bike",""],["Filme sehen","to watch films",""],
+    ["Fußball spielen","to play football",""],["fotografieren","to take photos",""],["das Hobby","hobby",""],
+    ["die Freizeit","free time",""],["gern","gladly / like doing",""],["lieber","rather / prefer",""],["am liebsten","most of all",""]
+  ],
+  html:`
+  <section class="block"><h3>❤️ gern: the like-button</h3>
+    <div class="ex"><button class="say" data-say="Ich lese gern.">🔊</button>Ich lese <span class="hl">gern</span>.<span class="en">I like reading.</span></div>
+    <div class="ex"><button class="say" data-say="Ich tanze nicht gern.">🔊</button>Ich tanze <span class="hl">nicht gern</span>.<span class="en">I don't like dancing.</span></div>
+    <div class="ex"><button class="say" data-say="Ich schwimme lieber.">🔊</button>Ich schwimme <span class="hl">lieber</span>.<span class="en">I prefer swimming.</span></div>
+    <div class="ex"><button class="say" data-say="Am liebsten wandere ich.">🔊</button><span class="hl">Am liebsten</span> wandere ich.<span class="en">Most of all I like hiking.</span></div>
+    <div class="ex"><button class="say" data-say="Was machst du gern in deiner Freizeit?">🔊</button>Was machst du gern in deiner Freizeit?<span class="en">What do you like doing in your free time?</span></div>
+    <div class="memo"><span class="tag">Memory hook · the ladder</span>👍 <b>gern</b> → 👍👍 <b>lieber</b> → 🏆 <b>am liebsten</b>. Like “good, better, best” for likes. (<i>lieber</i> is related to “lief”, an old English word for gladly, and to <i>Liebe</i> = love ❤️.)</div>
+  </section>
+  <section class="block"><h3>😋 mögen: for things you like</h3>
+    <table><tr><td>ich <b>mag</b></td><td>wir <b>mögen</b></td></tr><tr><td>du <b>magst</b></td><td>ihr <b>mögt</b></td></tr><tr><td>er/sie/es <b>mag</b></td><td>sie/Sie <b>mögen</b></td></tr></table>
+    <div class="ex"><button class="say" data-say="Ich mag Schokolade.">🔊</button>Ich <span class="hl">mag</span> Schokolade.<span class="en">I like chocolate.</span></div>
+    <div class="ex"><button class="say" data-say="Magst du Hunde?">🔊</button><span class="hl">Magst</span> du Hunde?<span class="en">Do you like dogs?</span></div>
+    <div class="memo"><span class="tag">Memory hook</span><b>gern for doing, mögen for things</b>: verb + gern (<i>Ich spiele gern</i>), mögen + noun (<i>Ich mag Pizza</i>). Think of a <b>mag</b>azine: you like <b>things</b> you see in it 📰. And notice: <b>ich mag = er mag</b>. No ending!</div>
+  </section>`,
+  dialogue:[
+    ["Elif","Was machst du gern am Wochenende?","What do you like doing at the weekend?"],
+    ["Paul","Ich spiele gern Fußball und ich koche gern. Und du?","I like playing football and cooking. And you?"],
+    ["Elif","Ich lese gern, aber am liebsten wandere ich.","I like reading, but most of all I like hiking."],
+    ["Paul","Wandern? Hmm, ich fahre lieber Fahrrad! 🚲","Hiking? Hmm, I prefer cycling!"],
+    ["Elif","Magst du Musik?","Do you like music?"],
+    ["Paul","Ja, sehr! Ich höre jeden Tag Musik.","Yes, a lot! I listen to music every day."]
+  ],
+  fact:"Germans have a beautiful word: <b>Feierabend</b>, “celebration evening”, meaning the moment your workday ends and your free time begins. 🎉 <i>Schönen Feierabend!</i> = Enjoy your evening off!",
+  cards:[["Ich lese gern.","I like reading."],["lieber","rather / prefer"],["am liebsten","most of all"],["Ich mag…","I like… (things)"],["wandern","to hike"],["die Freizeit","free time"],["reisen","to travel"],["Feierabend","end of the workday"]],
+  type:[
+    {p:"Ich spiele ____ Tennis. (gladly / like)", a:["gern","gerne"]},
+    {p:"Ich ___ Schokolade. (mögen)", a:["mag"]},
+    {p:"Du _____ Hunde. (mögen)", a:["magst"]},
+    {p:"Wir ______ gern. (to cook)", a:["kochen"]},
+    {p:"Most of all: am ________", a:["liebsten"]}
+  ],
+  quiz:[
+    {q:"“I like swimming” =", o:["Ich schwimme gern.","Ich gern schwimme.","Ich mag schwimme."], a:0},
+    {q:"Er ___ Katzen. (mögen)", o:["mag","mögt","magt"], a:0},
+    {q:"“I prefer reading” =", o:["Ich lese lieber.","Ich lese gern lieber.","Ich lese am liebsten lieber."], a:0},
+    {q:"<i>Ich tanze nicht gern</i> means…", o:["I don't like dancing","I can't dance","I never dance"], a:0},
+    {q:"Use <i>mögen</i> with…", o:["things (nouns)","verbs","numbers"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 16 */
+{
+  id:"modals", emoji:"🛠️", title:"Can, must, want: modal verbs",
+  goals:["Use können, müssen, wollen","Build the verb sandwich","Avoid the will-trap"],
+  intro:"Modal verbs add a mood to your sentence: <b>können</b> (can), <b>müssen</b> (must), <b>wollen</b> (want). They come with a special word order: the verb sandwich 🥪.",
+  html:`
+  <section class="block"><h3>📊 The three modals</h3>
+    <table><tr><th></th><th>können · can</th><th>müssen · must</th><th>wollen · want</th></tr>
+      <tr><td>ich</td><td><b>kann</b></td><td><b>muss</b></td><td><b>will</b></td></tr>
+      <tr><td>du</td><td>kannst</td><td>musst</td><td>willst</td></tr>
+      <tr><td>er/sie/es</td><td><b>kann</b></td><td><b>muss</b></td><td><b>will</b></td></tr>
+      <tr><td>wir</td><td>können</td><td>müssen</td><td>wollen</td></tr>
+      <tr><td>ihr</td><td>könnt</td><td>müsst</td><td>wollt</td></tr>
+      <tr><td>sie/Sie</td><td>können</td><td>müssen</td><td>wollen</td></tr>
+    </table>
+    <div class="memo"><span class="tag">Memory hook · The twins</span>With modals, <b>ich and er are identical twins</b> 👯: <i>ich kann – er kann</i>, <i>ich muss – er muss</i>. No -t for er! (You already saw this with <i>ich mag – er mag</i>.)</div>
+    <div class="memo"><span class="tag">⚠️ False friend</span><b>Ich will</b> does NOT mean “I will”. It means “I <b>want</b>”. <i>Ich will Pizza</i> = I want pizza 🍕. Think: “where there's a <b>will</b>, there's a way”: will = desire.</div>
+  </section>
+  <section class="block"><h3>🥪 The verb sandwich</h3>
+    <p>The modal goes in <b>position 2</b> (conjugated). The main verb goes to the <b>very end</b>, in its dictionary form.</p>
+    <div class="ex"><button class="say" data-say="Ich kann gut schwimmen.">🔊</button>Ich <span class="hl">kann</span> gut <span class="hl">schwimmen</span>.<span class="en">I can swim well.</span></div>
+    <div class="ex"><button class="say" data-say="Du musst heute arbeiten.">🔊</button>Du <span class="hl">musst</span> heute <span class="hl">arbeiten</span>.<span class="en">You have to work today.</span></div>
+    <div class="ex"><button class="say" data-say="Wir wollen nach Berlin fahren.">🔊</button>Wir <span class="hl">wollen</span> nach Berlin <span class="hl">fahren</span>.<span class="en">We want to go to Berlin.</span></div>
+    <div class="ex"><button class="say" data-say="Kannst du mir helfen?">🔊</button><span class="hl">Kannst</span> du mir <span class="hl">helfen</span>?<span class="en">Can you help me?</span></div>
+    <div class="ex"><button class="say" data-say="Ich kann heute nicht kommen.">🔊</button>Ich <span class="hl">kann</span> heute nicht <span class="hl">kommen</span>.<span class="en">I can't come today.</span></div>
+    <div class="memo"><span class="tag">Memory hook</span>The modal and the main verb are the two slices of <b>bread</b> 🍞; everything else is the <b>filling</b> 🥬🧀. <i>Ich <b>kann</b> [heute leider nicht] <b>kommen</b>.</i> Bigger sandwich, same bread.</div>
+  </section>`,
+  vocab:[
+    ["können","can / be able to",""],["müssen","must / have to",""],["wollen","to want","⚠️ not “will”"],
+    ["möchten","would like",""],["dürfen","may / be allowed to","Darf ich…? = May I…?"],["Kannst du mir helfen?","Can you help me?",""],
+    ["Darf ich?","May I?",""],["leider","unfortunately",""],["gut","well / good","Ich kann gut kochen."],["mir","(to) me","helfen + mir"]
+  ],
+  fact:"<b>Darf ich?</b> (May I?) is a lifesaver: point at a free chair, a window, a photo opportunity and say <i>Darf ich?</i> with a smile. Works everywhere. 😊",
+  cards:[["ich kann","I can"],["du musst","you must"],["er will","he wants"],["Kannst du…?","Can you…?"],["Darf ich?","May I?"],["leider","unfortunately"],["Ich muss arbeiten.","I have to work."],["Ich will…","I want…"]],
+  type:[
+    {p:"Ich ____ schwimmen. (können)", a:["kann"]},
+    {p:"Du _____ arbeiten. (müssen)", a:["musst"]},
+    {p:"Er ____ Pizza essen. (wollen)", a:["will"]},
+    {p:"Ich kann heute nicht ______. (kommen)", a:["kommen"]},
+    {p:"______ du mir helfen? (können)", a:["Kannst"]}
+  ],
+  quiz:[
+    {q:"Which word order is correct?", o:["Ich muss heute arbeiten.","Ich muss arbeiten heute.","Ich arbeiten muss heute."], a:0},
+    {q:"<i>Ich will einen Hund</i> means…", o:["I want a dog","I will get a dog","I have a dog"], a:0},
+    {q:"Sie (she) ___ gut singen. (können)", o:["kann","kannt","könnt"], a:0},
+    {q:"Wir ___ nach Hause gehen. (müssen)", o:["müssen","muss","müsst"], a:0},
+    {q:"“May I?” =", o:["Darf ich?","Will ich?","Muss ich?"], a:0}
+  ]
+},
+/* ---------------------------------------------------- 17 */
+{
+  id:"final", emoji:"🎓", title:"Final challenge",
+  goals:["Mixed questions from every chapter","Earn the 🎓 graduation badge"],
+  intro:"Ready? Twelve random questions from the whole course. Score <b>75% or more</b> to graduate. You can take a new exam as many times as you like: the questions change every time.",
+  final:true
+},
+/* ---------------------------------------------------- 18 */
+{
+  id:"cheat", emoji:"📋", title:"Cheat sheet",
+  intro:"The whole course on one page. Print it 🖨️ and stick it on your fridge.",
+  noQuiz:true,
+  html:`
+  <p class="noprint"><button class="btn" onclick="window.print()">🖨️ Print the cheat sheet</button></p>
+  <div class="grid2">
+    <div class="mini"><h4>🔤 Sounds</h4>W = v · V = f · J = y · Z = ts · ß = ss<br>ei = “eye” · ie = “ee” · eu/äu = “oy”<br>sch = sh · st/sp at start = sht/shp<br>ö / ü = pout your lips · final -e is spoken</div>
+    <div class="mini"><h4>🤝 Survival phrases</h4>Hallo! · Guten Tag! · Tschüss! · Auf Wiedersehen!<br>Ich heiße … · Ich komme aus … · Ich wohne in …<br>Wie geht's? – Gut, danke!<br>Bitte · Danke · Entschuldigung! · Freut mich!</div>
+    <div class="mini"><h4>🔢 Numbers</h4>1 eins · 2 zwei · 3 drei · 4 vier · 5 fünf · 6 sechs · 7 sieben · 8 acht · 9 neun · 10 zehn · 11 elf · 12 zwölf<br>16 sechzehn · 17 siebzehn · 30 dreißig<br>21 = <b>ein-und-zwanzig</b> (backwards!)</div>
+    <div class="mini"><h4>💪 sein & haben</h4>bin · bist · ist · sind · seid · sind<br>habe · hast · hat · haben · habt · haben<br>Ich habe Hunger/Durst · Ich bin 30 Jahre alt</div>
+    <div class="mini"><h4>🎨 Articles</h4><span class="der">der</span> masc · <span class="die">die</span> fem · <span class="das">das</span> neut · <span class="pl">die</span> plural<br>-ung/-heit/-keit/-schaft/-ion → <span class="die">die</span><br>-chen/-lein → <span class="das">das</span> · days/months → <span class="der">der</span><br>ein / <b>eine</b> / ein</div>
+    <div class="mini"><h4>🏃 Verbs</h4>ich -e · du -st · er -t · wir -en · ihr -t · sie -en<br>🦎 e→i (isst), e→ie (liest), a→ä (fährt): only du & er<br><b>Verb = 2nd position</b> · yes/no question: verb 1st</div>
+    <div class="mini"><h4>❓ Questions</h4>Wer? who · Was? what · <b>Wo?</b> where · Woher? from where · Wohin? where to · Wann? when · Wie? how · Warum? why · Wie viel? how much<br>Negative question + yes → <b>Doch!</b></div>
+    <div class="mini"><h4>🙅 Negation</h4><b>kein</b> = K + ein (nouns with ein / no article)<br><b>nicht</b> = everything else<br>nichts · nie · niemand · noch nicht</div>
+    <div class="mini"><h4>👪 Possessives</h4>mein · dein · sein (his) · ihr (her) · unser · euer · ihr/Ihr<br>+ <b>-e</b> for die and plural: meine Mutter</div>
+    <div class="mini"><h4>⏰ Time</h4><b>am</b> Montag · <b>im</b> Mai · <b>um</b> 8 Uhr<br>halb vier = <b>3:30</b> · Viertel nach / vor<br>morgen = tomorrow · der Morgen = morning</div>
+    <div class="mini"><h4>🎯 Accusative (target)</h4>Only masculine changes: der → <b>den</b>, ein → <b>einen</b>, kein → <b>keinen</b><br>mich · dich · <b>ihn</b> · sie · es · uns · euch · sie</div>
+    <div class="mini"><h4>☕ Café & ❤️ likes</h4>Ich möchte einen Kaffee, bitte · Die Rechnung, bitte · Stimmt so!<br>Ich lese <b>gern</b> → lieber → am liebsten<br>Ich <b>mag</b> Pizza (mögen + things)</div>
+    <div class="mini" style="grid-column:1/-1"><h4>🛠️ Modals & the sandwich</h4>kann · muss · will (ich = er!) · <b>will = want</b>, not “will”!<br>Ich <b>kann</b> heute nicht <b>kommen</b>: modal in position 2, infinitive at the end 🥪</div>
+  </div>`
+}
+];
+
+/* =========================================================
+   MEMORY BOOK (A1–A2 word list)
+   rows: [german, english, note]   ·   "ab|fahren" = separable verb
+   ========================================================= */
+const MEMORY_BOOK = [
+ {group:"Verben", title:"Verbs", emoji:"🏃",
+  hook:"🦎 = shape-shifting verb (the vowel changes with du and er/sie/es, see Chapter 7). Modal verbs push the second verb to the end of the sentence (Chapter 16).",
+  rows:[
+  ["arbeiten","to work",""],["backen","to bake",""],["begleiten","to accompany",""],["besprechen","to discuss","🦎 du besprichst"],
+  ["brauchen","to need",""],["bringen","to bring",""],["buchstabieren","to spell","Können Sie das buchstabieren?"],["dürfen","to be allowed to, may (modal)","Darf ich?"],
+  ["empfehlen","to recommend","🦎 du empfiehlst"],["erklären","to explain",""],["essen","to eat","🦎 du isst"],["fahren","to drive / to go (by vehicle)","🦎 du fährst"],
+  ["gefallen","to please","Das gefällt mir. = I like it."],["geben","to give","🦎 du gibst"],["gehen","to go (on foot)",""],["haben","to have","ich habe, du hast, er hat"],
+  ["heißen","to be called","du heißt"],["helfen","to help","🦎 du hilfst"],["hören","to listen / to hear",""],["kochen","to cook",""],
+  ["kommen (aus)","to come (from)","Ich komme aus Frankreich."],["können","can, to be able to (modal)","ich kann, er kann"],["langweilen","to bore","sich langweilen = to be bored"],["laufen","to run / to walk","🦎 du läufst"],
+  ["leben","to live (be alive, live a life)",""],["lernen","to learn",""],["lesen","to read","🦎 du liest"],["leuchten","to light up, to glow",""],
+  ["lieben","to love",""],["machen","to make / to do",""],["malen","to paint",""],["möchten","would like (modal)","ich möchte"],
+  ["mögen","to like (modal)","ich mag, er mag"],["müssen","must, to have to (modal)","ich muss"],["nehmen","to take","🦎 du nimmst"],["passen","to fit / to suit","Das passt!"],
+  ["reden","to talk",""],["rennen","to run (fast)",""],["riechen","to smell",""],["riechen nach","to smell like / of","Es riecht nach Kaffee."],
+  ["schauen","to look",""],["scheinen","to shine","Die Sonne scheint."],["schlafen","to sleep","🦎 du schläfst"],["schreiben","to write",""],
+  ["sehen","to see","🦎 du siehst"],["sein","to be","bin, bist, ist, sind, seid, sind"],["sollen","should, ought to (modal)",""],["sprechen","to speak","🦎 du sprichst"],
+  ["stören","to disturb","Störe ich?"],["studieren","to study (at university)",""],["suchen","to look for / to search",""],["tanzen","to dance",""],
+  ["tragen","to carry / to wear","🦎 du trägst"],["treffen","to meet","🦎 du triffst"],["treiben","to do (sport)","Sport treiben"],["trinken","to drink",""],
+  ["tun","to do",""],["vergessen","to forget","🦎 du vergisst"],["waschen","to wash","🦎 du wäschst"],["werden","to become","du wirst, er wird"],
+  ["wohnen (in)","to live (in)","Ich wohne in Colmar."],["wollen","to want (modal)","⚠️ not “will”"],["zeichnen","to draw",""],["zeigen","to show",""]
+ ]},
+ {group:"Verben", title:"Separable verbs", emoji:"✂️",
+  hook:"<b>The prefix jumps to the end!</b> In a normal sentence the little front part breaks off and lands at the very end: <i>auf|stehen → Ich <b>stehe</b> um 7 Uhr <b>auf</b>.</i> Picture a rocket ✂️🚀: the first stage separates and falls behind. With a modal it stays glued: <i>Ich muss um 7 Uhr <b>aufstehen</b>.</i>",
+  rows:[
+  ["ab|fahren","to depart","Der Zug fährt um 8 ab."],["ab|holen","to pick up","Ich hole dich ab."],["ab|trocknen","to dry (the dishes)",""],["ab|waschen","to wash up",""],
+  ["an|fangen","to begin","Der Film fängt an."],["an|kommen","to arrive",""],["an|machen","to turn on","Mach das Licht an!"],["an|rufen","to call (phone)","Ich rufe dich an."],
+  ["auf|hängen","to hang up",""],["auf|räumen","to tidy up",""],["auf|stehen","to get up",""],["aus|füllen","to fill out (a form)",""],
+  ["aus|leeren","to empty",""],["aus|wählen","to choose",""],["ein|kaufen","to shop",""],["ein|laden","to invite","Ich lade dich ein."],
+  ["ein|schlafen","to fall asleep",""],["fern|sehen","to watch TV","Wir sehen fern."],["mit|bringen","to bring along",""],["mit|kommen","to come along","Kommst du mit?"],
+  ["mit|nehmen","to take along",""],["teil|nehmen","to take part",""],["um|steigen","to change (trains / buses)",""],["vor|bereiten","to prepare",""],
+  ["zurück|fahren","to drive / go back",""],["zurück|kommen","to come back",""]
+ ]},
+ {group:"Nomen", title:"Body", emoji:"🫀",
+  hook:"Body parts with their colour: <span class='der'>der</span> Kopf, <span class='die'>die</span> Nase, <span class='das'>das</span> Auge. Touch each part while saying it out loud: your body becomes your flashcard 🙌.",
+  rows:[
+  ["der Kopf","head",""],["der Mund","mouth",""],["der Arm","arm",""],["der Fuß","foot",""],["der Bauch","belly",""],["der Magen","stomach",""],
+  ["der Schmerz","pain / ache","pl. die Schmerzen"],["die Nase","nose",""],["die Hand","hand",""],["die Schulter","shoulder",""],["die Leber","liver",""],
+  ["die Augenbraue","eyebrow",""],["die Träne","tear (crying)",""],["das Auge","eye","pl. die Augen"],["das Ohr","ear",""],["das Bein","leg",""],["das Gehirn","brain",""]
+ ]},
+ {group:"Nomen", title:"Animals", emoji:"🐘",
+  rows:[
+  ["der Hund","dog",""],["der Elefant","elephant",""],["der Papagei","parrot",""],["der Delfin","dolphin",""],
+  ["die Katze","cat",""],["die Robbe","seal",""],["die Ziege","goat",""],["die Qualle","jellyfish",""],
+  ["das Pferd","horse",""],["das Schaf","sheep",""],["das Lamm","lamb",""]
+ ]},
+ {group:"Nomen", title:"Food, herbs & spices", emoji:"🌿",
+  hook:"<b>Knoblauch</b> = garlic: <i>Knob</i> (bulb) + <i>Lauch</i> (leek), a “bulb-leek” 🧄. <b>Kreuzkümmel</b> = cumin: literally “cross-caraway”.",
+  rows:[
+  ["der Reis","rice",""],["der Pfeffer","pepper",""],["der Paprika","paprika (spice)","die Paprika = bell pepper"],["der Curry","curry","also: das Curry"],
+  ["der Zimt","cinnamon",""],["der Anis","anise",""],["der Kreuzkümmel","cumin","also: der Cumin"],["der Safran","saffron",""],
+  ["der Koriander","coriander",""],["der Dill","dill",""],["der Rosmarin","rosemary",""],["der Knoblauch","garlic",""],
+  ["die Kurkuma","turmeric","also: der Kurkuma"],["die Minze","mint",""],["die Petersilie","parsley",""],["die Zwiebel","onion",""],
+  ["die Zutat","ingredient","pl. die Zutaten"],["die Lebensmittel","food, groceries (pl.)",""],["das Salz","salt",""],["das Basilikum","basil","also: der Basilikum"],
+  ["das Gericht","dish, meal",""],["das Gewürz","spice","pl. die Gewürze"]
+ ]},
+ {group:"Nomen", title:"Weather & sky", emoji:"⛅",
+  hook:"<b>Donner</b> (thunder) gave its name to <b>Donnerstag</b>, Thor's day ⚡. <b>Blitz</b> = lightning, and a camera flash too 📸.",
+  rows:[
+  ["der Wind","wind",""],["der Nebel","fog",""],["der Mond","moon",""],["der Blitz","lightning (also: camera flash)",""],["der Donner","thunder",""],
+  ["die Sonne","sun",""],["die Wolke","cloud",""],["die Kälte","cold, coldness",""],["die Nässe","wetness",""]
+ ]},
+ {group:"Nomen", title:"Home & objects", emoji:"🏠",
+  hook:"<b>der Kuli</b> is short for <i>Kugelschreiber</i>, literally “ball-writer” 🖊️.",
+  rows:[
+  ["der Stuhl","chair",""],["der Schirm","umbrella",""],["der Kuli","pen","short for der Kugelschreiber"],["der Kopfhörer","headphones","pl. die Kopfhörer"],
+  ["die Vase","vase",""],["die Tür","door",""],["die Uhr","clock / watch",""],["die Wäsche","laundry",""],
+  ["das Bild","picture, painting",""],["das Auto","car",""],["das Haus","house",""],["das Zuhause","home",""],["das Fahrrad","bike","lit. “drive-wheel”"]
+ ]},
+ {group:"Nomen", title:"Feelings", emoji:"💭",
+  hook:"Germans “have” these feelings: <i>Ich <b>habe</b> Hunger / Durst / Angst.</i>",
+  rows:[
+  ["der Hunger","hunger","Ich habe Hunger."],["der Durst","thirst","Ich habe Durst."],["die Angst","fear (everyday word)","Ich habe Angst."],
+  ["die Furcht","fear (formal, literary)",""],["die Höhenangst","fear of heights","Höhe = height"],["die Hoffnung","hope",""]
+ ]},
+ {group:"Nomen", title:"Time, money & ideas", emoji:"💶",
+  hook:"<b>das Trinkgeld</b> = tip, literally “drink-money” 🍺💶: originally, money for the waiter to buy himself a drink.",
+  rows:[
+  ["die Zeit","time",""],["das Geld","money",""],["das Glück","luck, happiness","Viel Glück! = Good luck!"],["das Trinkgeld","tip (money)",""],["das Argument","argument (reason)",""]
+ ]},
+ {group:"Nomen", title:"Art & music", emoji:"🎨",
+  rows:[
+  ["der Künstler","artist","die Künstlerin (f)"],["der Sänger","singer","die Sängerin (f)"],["der Interpret","performer",""],
+  ["die Kunst","art",""],["die Ballade","ballad",""],["das Gedicht","poem",""]
+ ]},
+ {group:"Nomen", title:"People & relationships", emoji:"👥",
+  hook:"<i>mein Freund</i> = my <b>boyfriend</b>… or just my friend. To make it clear it's only a friend: <i>ein Freund von mir</i> 😉.",
+  rows:[
+  ["der Friseur","hairdresser",""],["der Friseursalon","hair salon",""],["der Kunde","customer","pl. die Kunden"],
+  ["mein Mann","my husband",""],["meine Frau","my wife",""],["mein Freund","my boyfriend",""],["ein Freund von mir","a friend of mine",""]
+ ]},
+ {group:"Adjektive", title:"Colours", emoji:"🌈",
+  rows:[
+  ["blau","blue",""],["rot","red",""],["rosa","pink",""],["pink","pink (bright)",""],["grün","green",""],["schwarz","black",""],
+  ["gelb","yellow",""],["lila","purple",""],["orange","orange",""],["silber","silver",""],["gold","gold",""],["grau","grey",""],
+  ["weiß","white",""],["braun","brown",""],["blond","blond",""]
+ ]},
+ {group:"Adjektive", title:"Opposites", emoji:"⚖️",
+  rows:[
+  ["einfach ↔ schwierig","simple, easy ↔ difficult",""],["schnell ↔ langsam","fast ↔ slow",""],["stark ↔ schwach","strong ↔ weak",""],
+  ["höflich ↔ unhöflich","polite ↔ impolite","un- = not, like English un-"],["formell ↔ informell","formal ↔ informal",""],["hoch ↔ niedrig","high ↔ low",""]
+ ]},
+ {group:"Adjektive", title:"Character & opinion", emoji:"😊",
+  rows:[
+  ["nett","nice",""],["cool","cool",""],["lustig","funny",""],["witzig","funny, witty",""],["süß","cute (also: sweet)",""],
+  ["schön","pretty, beautiful",""],["sympathisch","likeable, pleasant","false friend: not “sympathetic”"],["großzügig","generous",""],["unabhängig","independent",""],
+  ["interessant","interesting",""],["wichtig","important",""],["neu","new",""],["gleich","same, similar",""]
+ ]},
+ {group:"Adjektive", title:"Taste", emoji:"👅",
+  rows:[["süß","sweet",""],["salzig","salty","das Salz"],["sauer","sour",""],["bitter","bitter",""],["herzhaft","savoury, hearty","Herz = heart"]]},
+ {group:"Adjektive", title:"Weather", emoji:"🌦️",
+  hook:"<b>Noun + -ig = weather adjective</b>: die Wolke → wolk<b>ig</b>, der Wind → wind<b>ig</b>, die Sonne → sonn<b>ig</b>, der Nebel → nebl<b>ig</b>. Just like English cloud<b>y</b>, wind<b>y</b>, sunn<b>y</b>! ☀️",
+  rows:[["wolkig","cloudy","die Wolke"],["sonnig","sunny","die Sonne"],["windig","windy","der Wind"],["neblig","foggy","der Nebel"],["kalt","cold","die Kälte"],["nass","wet","die Nässe"]]},
+ {group:"Adjektive", title:"Other useful adjectives", emoji:"✨",
+  rows:[["günstig","cheap, good value",""],["gratis","free (of charge)",""],["laut","loud",""],["kaputt","broken",""],["voll","full, crowded",""],["allein","alone",""],["einsam","lonely",""]]},
+ {group:"Adjektive", title:"Describing people", emoji:"🧑",
+  hook:"<i>Er hat <b>eine Glatze</b></i> = he's bald (lit. “he has a bald head”). <b>Stupsnase</b> = snub nose: <i>stupsen</i> means to give a little push 👃.",
+  rows:[
+  ["groß ↔ klein","tall ↔ short",""],["schlank ↔ dick","slim ↔ fat",""],["jung ↔ alt","young ↔ old",""],["kurz ↔ lang","short ↔ long (hair)",""],
+  ["lockig / glatt / wellig","curly / straight / wavy (hair)",""],["kräftig ↔ schwach","strong, sturdy ↔ weak",""],["sportlich / athletisch","sporty / athletic",""],
+  ["dunkler / heller / blasser Teint","dark / fair / pale complexion","der Teint"],["kahl / eine Glatze haben","bald / to be bald",""],
+  ["der Bart","beard",""],["der Schnauzbart","moustache",""],["die Adlernase","aquiline nose","Adler = eagle 🦅"],["die Hakennase","hooked nose",""],["die Stupsnase","snub nose",""]
+ ]},
+ {group:"Adverbien", title:"Parts of the day", emoji:"🌗",
+  hook:"<b>Add -s = every time</b>: <i>der Morgen</i> (the morning) → <b>morgens</b> (in the mornings, every morning). Same for mittags, abends, nachts… 🔁",
+  rows:[["morgens","in the morning(s)",""],["mittags","at noon",""],["nachmittags","in the afternoon(s)",""],["abends","in the evening(s)",""],["nachts","at night",""]]},
+ {group:"Adverbien", title:"Points in time", emoji:"📆",
+  hook:"<b>vor</b>gestern = “before-yesterday” ⏪ · <b>über</b>morgen = “over-tomorrow” ⏩. A simple time machine!",
+  rows:[["vorgestern","the day before yesterday",""],["morgen","tomorrow",""],["übermorgen","the day after tomorrow",""],["jetzt","now",""],["gerade","right now, just",""],["gleich","in a moment, right away",""],["später","later",""]]},
+ {group:"Adverbien", title:"Frequency", emoji:"🔁",
+  hook:"From 100% to 0%: immer → meistens → oft → manchmal → selten → nie. 📉",
+  rows:[["immer","always",""],["meistens","usually, mostly",""],["oft / häufig","often",""],["täglich","daily","der Tag"],["selten","rarely, seldom",""],["nie","never",""],["von Zeit zu Zeit","from time to time",""],["noch","still / yet",""]]},
+ {group:"Adverbien", title:"Quantity & degree", emoji:"📏",
+  rows:[["viele","many",""],["ein paar","a few","not “a pair”!"],["fast","almost","false friend: not “fast” (= schnell)"],["beide","both",""],["nur","only",""],["total","totally",""],["eher","rather",""]]},
+ {group:"Adverbien", title:"Manner & attitude", emoji:"🎭",
+  rows:[["natürlich","naturally, of course",""],["bestimmt","certainly, surely",""],["beruflich","professionally, for work",""],["zusammen = gemeinsam","together",""],["leise","quietly",""],["hoffentlich","hopefully","die Hoffnung"],["selber","yourself, by oneself",""],["also","so, therefore","false friend: not “also” (= auch)"]]},
+ {group:"Konjunktionen & Präpositionen", title:"Conjunctions", emoji:"🔗",
+  hook:"<b>weil</b> kicks the verb to the end; <b>denn</b> leaves it in place. <i>…, <b>weil</b> ich müde <b>bin</b>.</i> / <i>…, <b>denn</b> ich <b>bin</b> müde.</i> Hook: <b>weil</b> = the verb has to <b>wait</b> until the end ⏳.",
+  rows:[["aber","but",""],["denn","because","verb stays in position 2"],["weil","because","verb goes to the end"],["trotzdem","nevertheless, still",""],["nachdem","after (doing something)","verb goes to the end"]]},
+ {group:"Konjunktionen & Präpositionen", title:"Prepositions", emoji:"📍",
+  rows:[["bei + Dativ","at (someone's place), with","bei mir = at my place (French: chez moi)"],["gegen + Akkusativ","against","gegen den Wind"]]}
+];
+
+/* =========================================================
+   STATE (saved in this browser)
+   ========================================================= */
+const KEY = "deutsch_macht_spass_v2";
+const S = (()=>{ const d={done:{},xp:0,streak:0,last:"",boxes:{},seen:{},dark:false,slow:false};
+  try{ Object.assign(d, JSON.parse(localStorage.getItem(KEY)||"{}")); }catch(e){} return d; })();
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+const LEVELS=["Anfänger 🐣","Lehrling 🌱","Entdecker 🧭","Kenner 🦉","Profi 🚀","Meister 👑"];
+const XP_PER_LEVEL=200;
+const levelOf = xp => Math.min(Math.floor(xp/XP_PER_LEVEL), LEVELS.length-1);
+function today(){ const d=new Date(); return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(); }
+function yesterday(){ const d=new Date(Date.now()-864e5); return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(); }
+function touchStreak(){ const t=today(); if(S.last===t) return; S.streak = (S.last===yesterday()) ? S.streak+1 : 1; S.last=t; }
+function addXP(n){
+  const before = levelOf(S.xp);
+  S.xp += n; touchStreak(); save(); toast("+"+n+" XP"); updateTop();
+  if(levelOf(S.xp) > before){ setTimeout(()=>{ toast("Level up! "+LEVELS[levelOf(S.xp)]); confetti(); }, 900); }
+}
+function updateTop(){
+  document.getElementById("lvl").textContent = LEVELS[levelOf(S.xp)];
+  document.getElementById("xp").textContent = "⭐ "+S.xp+" XP";
+  const live = S.last===today() || S.last===yesterday();
+  document.getElementById("streak").textContent = "🔥 "+(live?S.streak:0)+" day"+((live?S.streak:0)===1?"":"s");
+  document.getElementById("speedBtn").textContent = S.slow ? "🐢" : "🐇";
+  document.getElementById("speedBtn").title = S.slow ? "Audio: slow (click for normal)" : "Audio: normal (click for slow)";
+}
+function toggleDark(){ S.dark=!S.dark; document.body.classList.toggle("dark",S.dark); save(); }
+function toggleSpeed(){ S.slow=!S.slow; save(); updateTop(); toast(S.slow?"🐢 Slow audio":"🐇 Normal audio"); }
+
+/* =========================================================
+   HELPERS
+   ========================================================= */
+const strip = s => String(s).replace(/<[^>]+>/g,"");
+const esc = s => strip(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;");
+const shuffle = a => { a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
+function colorArt(de, en){
+  const m = String(de).match(/^(der|die|das)\s/);
+  if(!m) return de;
+  const cls = /\(pl/.test(en||"") ? "pl" : m[1];
+  return de.replace(/\b(der|die|das)\b/g, a=>`<span class="${/\(pl/.test(en||"")?"pl":a}">${a}</span>`);
+}
+function sayText(row){ return row[3] || strip(row[0]).replace(/…|\.\.\./g,"").replace(/\|/g,"").replace(/\s*\+\s*(Dativ|Akkusativ)/g,"").replace(/\s*(\/|↔|=)\s*/g,", ").trim(); }
+let tTimer;
+function toast(msg){ const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("on"); clearTimeout(tTimer); tTimer=setTimeout(()=>t.classList.remove("on"),1500); }
+function confetti(){ const em=["🎉","⭐","🥨","🇩🇪","✨","🏅"]; for(let i=0;i<34;i++){ const s=document.createElement("span"); s.className="confetti"; s.textContent=em[i%em.length]; s.style.left=Math.random()*100+"vw"; s.style.animationDelay=(Math.random()*.6)+"s"; document.body.appendChild(s); setTimeout(()=>s.remove(),3000);} }
+
+/* Speech */
+let deVoice=null;
+function pickVoice(){ const vs=speechSynthesis.getVoices(); deVoice = vs.find(v=>/de[-_]DE/i.test(v.lang)&&/google|natural|neural/i.test(v.name)) || vs.find(v=>/^de/i.test(v.lang)) || null; }
+if("speechSynthesis" in window){ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+function speak(text){
+  if(!("speechSynthesis" in window)){ toast("Audio not supported in this browser"); return; }
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text); u.lang="de-DE"; u.rate = S.slow?0.65:0.9; if(deVoice) u.voice=deVoice;
+  speechSynthesis.speak(u);
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+let page = "dash";   // "dash" | "review" | chapter index
+function renderMenu(){
+  let h = `<button class="navlink ${page==='dash'?'active':''}" onclick="go('dash')"><span>🏆</span><span>My progress</span></button>
+           <button class="navlink ${page==='review'?'active':''}" onclick="go('review')"><span>🃏</span><span>Review deck</span></button>
+           <button class="navlink ${page==='memory'?'active':''}" onclick="go('memory')"><span>📒</span><span>Memory Book</span><span class="tick" style="opacity:.6">${mbCount()}</span></button>`;
+  chapters.forEach((c,i)=>{
+    const u = UNITS.find(u=>u.from===i); if(u) h += `<div class="unit-label">${u.name}</div>`;
+    h += `<button class="navlink ${page===i?'active':''}" onclick="go(${i})"><span class="num">${i}</span><span>${c.emoji}</span><span>${c.title}</span><span class="tick">${S.done[c.id]?'🏅':''}</span></button>`;
+  });
+  document.getElementById("menu").innerHTML = h;
+}
+function go(p){ if(typeof p==="number" && (p<0||p>=chapters.length)) return; page=p; document.getElementById("nav").classList.remove("open"); render(); }
+
+/* =========================================================
+   PAGE RENDERING
+   ========================================================= */
+function render(){
+  const main = document.getElementById("content");
+  if(page==="dash") main.innerHTML = dashHTML();
+  else if(page==="review") main.innerHTML = reviewHTML();
+  else if(page==="memory") main.innerHTML = memoryHTML();
+  else main.innerHTML = chapterHTML(page);
+  main.querySelectorAll("[data-cards]").forEach(el=>{ el.outerHTML = cardsHTML(JSON.parse(el.dataset.cards)); });
+  if(typeof page==="number"){
+    const c = chapters[page];
+    if(c.final) newExam();
+    if(!S.seen[c.id]){ S.seen[c.id]=1; touchStreak(); save(); }
+  }
+  if(page==="review") nextReview();
+  renderMenu(); updateTop();
+  window.scrollTo({top:0});
+}
+
+function chapterHTML(i){
+  const c = chapters[i];
+  let h = `<div class="kicker">Chapter ${i} · ${UNITS.filter(u=>u.from<=i).pop().name}</div>
+    <div class="chapter-head"><span class="emoji">${c.emoji}</span><h2>${c.title}</h2></div>
+    <p class="intro">${c.intro}</p>`;
+  if(c.goals) h += `<div class="goals">${c.goals.map(g=>`<span>${g}</span>`).join("")}</div>`;
+  if(c.html) h += c.html;
+  if(c.vocab){
+    const hd = c.vocabHead || ["German","English","Tip"];
+    h += `<section class="block"><h3>📚 ${c.vocabHead?"The rules":"Vocabulary"} <small>(press 🔊 and repeat out loud)</small></h3><table>
+      <tr><th>${hd[0]}</th><th>${hd[1]}</th><th>${hd[2]}</th></tr>
+      ${c.vocab.map(r=>`<tr><td class="de"><button class="say" data-say="${esc(sayText(r))}">🔊</button>${colorArt(r[0],r[1])}</td><td>${r[1]}</td><td class="tip">${r[2]}</td></tr>`).join("")}
+    </table></section>`;
+  }
+  if(c.memos) h += `<section class="block"><h3>🧠 Memory hooks</h3>${c.memos.map(m=>`<div class="memo">${m}</div>`).join("")}</section>`;
+  if(c.dialogue){
+    const people=[...new Set(c.dialogue.map(d=>d[0]))], cols=["#2f7a72","#d6423b"];
+    h += `<section class="block"><h3>🎭 Mini dialogue <button class="say" data-say="${esc(c.dialogue.map(d=>d[1]).join(' '))}">🔊</button><small>English is blurred: click to reveal it</small></h3>
+      ${c.dialogue.map(([who,de,en])=>{const k=people.indexOf(who);return `<div class="bubble ${k%2?'r':''}"><div class="who" style="background:${cols[k%2]}">${who.slice(0,3)}</div><div class="txt"><button class="say" data-say="${esc(de)}">🔊</button>${de}<span class="en hide" onclick="this.classList.remove('hide')">${en}</span></div></div>`}).join("")}
+    </section>`;
+  }
+  if(c.fact) h += `<div class="fact"><span class="big">💡</span><div><b>Did you know?</b><br>${c.fact}</div></div>`;
+  if(c.final){
+    h += `<section class="block"><h3>🎓 Final exam</h3><div id="exam"></div>
+      <p><button class="btn" onclick="newExam()">🔄 New exam</button></p></section>`;
+  }
+  // Practice zone
+  const tabs=[];
+  if(c.cards) tabs.push(["cards","🃏 Flashcards"]);
+  if(c.vocab && !c.noMatch) tabs.push(["match","🧩 Match"]);
+  if(c.vocab && !c.noListen) tabs.push(["listen","👂 Listen"]);
+  if(c.type) tabs.push(["type","⌨️ Type it"]);
+  if(tabs.length){
+    h += `<section class="block"><h3>🎮 Practice zone</h3>
+      <div class="tabs">${tabs.map((t,k)=>`<button class="${k?'':'on'}" onclick="showTab(this,'${t[0]}')">${t[1]}</button>`).join("")}</div>
+      <div id="tab-cards" class="tabpane" ${tabs[0][0]==='cards'?'':'hidden'}>${c.cards?cardsHTML(c.cards):''}</div>
+      <div id="tab-match" class="tabpane" ${tabs[0][0]==='match'?'':'hidden'}></div>
+      <div id="tab-listen" class="tabpane" hidden></div>
+      <div id="tab-type" class="tabpane" ${tabs[0][0]==='type'?'':'hidden'}>${c.type?typeHTML(c.type):''}</div>
+    </section>`;
+  }
+  if(c.quiz){
+    h += `<section class="block"><h3>🎯 Chapter quiz <small>${S.done[c.id]?'🏅 badge earned!':'score 75% to earn the badge'}</small></h3><div id="quizbox">${quizHTML(c.quiz, c.id)}</div></section>`;
+  }
+  h += `<div class="navbtns">
+    <button class="btn alt big" onclick="go(${i-1})" ${i===0?'disabled style="opacity:.3"':''}>← Previous</button>
+    <button class="btn big" onclick="go(${i+1})" ${i===chapters.length-1?'disabled style="opacity:.3"':''}>Next →</button></div>`;
+  return h;
+}
+
+function showTab(btn, name){
+  btn.parentNode.querySelectorAll("button").forEach(b=>b.classList.remove("on")); btn.classList.add("on");
+  document.querySelectorAll(".tabpane").forEach(p=>p.hidden=true);
+  const pane=document.getElementById("tab-"+name); pane.hidden=false;
+  if(name==="match" && !pane.innerHTML) newMatch();
+  if(name==="listen" && !pane.innerHTML) newListen();
+}
+
+/* ---------- Flashcards ---------- */
+function cardsHTML(list){
+  return `<div class="cards">${list.map(([f,b])=>`<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-inner"><div class="face front"><div>${colorArt(f)}</div></div><div class="face back"><div>${b}</div></div></div></div>`).join("")}</div>`;
+}
+
+/* ---------- Quiz ---------- */
+const QZ = {};
+function quizHTML(qs, key){
+  const prepared = qs.map(q=>{ const idx=shuffle(q.o.map((_,k)=>k)); return {...q, o:idx.map(k=>q.o[k]), a:idx.indexOf(q.a)}; });
+  QZ[key] = {qs:prepared, ans:{}};
+  return prepared.map((q,i)=>`<div class="quiz-q"><p>${i+1}. ${q.q}</p>
+    <div class="opts">${q.o.map((o,j)=>`<button onclick="answer('${key}',${i},${j},this)">${o}</button>`).join("")}</div>
+    <div class="feedback"></div></div>`).join("") + `<div class="score" id="score-${key}"></div>`;
+}
+const CHEERS=["Super! 🎉","Toll! ⭐","Sehr gut! 👏","Prima! 🚀","Genau! ✅","Klasse! 🥨","Wunderbar! 🌟"];
+function answer(key, i, j, btn){
+  const st=QZ[key], q=st.qs[i];
+  if(st.ans[i]!==undefined) return;
+  const ok = j===q.a; st.ans[i]=ok;
+  const box=btn.closest(".quiz-q");
+  box.querySelectorAll("button")[q.a].classList.add("ok");
+  if(!ok) btn.classList.add("ko");
+  box.querySelector(".feedback").innerHTML = (ok ? CHEERS[Math.floor(Math.random()*CHEERS.length)] : "Nicht ganz… (not quite): the green one is right.") + (q.note?` <i>${q.note}</i>`:"");
+  if(ok) addXP(5);
+  if(Object.keys(st.ans).length===st.qs.length){
+    const score=Object.values(st.ans).filter(Boolean).length, pct=score/st.qs.length;
+    const pass = pct>=0.75;
+    const id = key==="exam" ? "final" : key;
+    const first = pass && !S.done[id];
+    let msg = `Score: ${score} / ${st.qs.length} · `;
+    if(pass) msg += id==="final" ? "🎓 Herzlichen Glückwunsch! You graduated!" : "Chapter complete! 🏅 Weiter so!";
+    else msg += `Almost! Practise a bit more and try again. <button class="btn alt" onclick="retry('${key}')">🔁 Retry</button>`;
+    document.getElementById("score-"+key).innerHTML = msg;
+    if(first){ S.done[id]=true; save(); addXP(id==="final"?100:30); confetti(); renderMenu(); }
+  }
+}
+function retry(key){
+  if(key==="exam"){ newExam(); return; }
+  const c=chapters.find(c=>c.id===key); document.getElementById("quizbox").innerHTML = quizHTML(c.quiz,key);
+}
+function newExam(){
+  const pool=[]; chapters.forEach(c=>{ if(c.quiz && c.id!=="welcome") c.quiz.forEach(q=>pool.push({...q, q:`<span class="kicker">${c.emoji} ${c.title}</span><br>`+q.q})); });
+  document.getElementById("exam").innerHTML = quizHTML(shuffle(pool).slice(0,12),"exam");
+}
+
+/* ---------- Memory Book ---------- */
+function mbCount(){ return MEMORY_BOOK.reduce((n,s)=>n+s.rows.length,0) + myWords().length; }
+
+/* ---------- ✏️ My words: user-added vocabulary, sorted into your own categories ---------- */
+const SUGGESTED_CATS = ["Food","Home","Work","Travel","Family","Body","Animals","Feelings","Hobbies","Weather","Verbs","Phrases"];
+let myEdit = null;        // index of the word being edited, or null
+let myCatFilter = "";     // category chip selected inside My words
+function myWords(){ if(!Array.isArray(S.myWords)) S.myWords=[]; return S.myWords; }   // rows: [de, en, note, category]
+function myCats(){ return [...new Set(myWords().map(r=>r[3]||"Other"))].sort((a,b)=>a.localeCompare(b)); }
+function guessCat(de){
+  if(/\|/.test(de)) return "Verbs";
+  if(/^[a-zäöü]+(en|ern|eln)$/.test(de)) return "Verbs";
+  if(/\s/.test(de) && !/^(der|die|das)\s\S+$/i.test(de)) return "Phrases";
+  return "Other";
+}
+function tidyCat(c){ c=(c||"").trim(); return c ? c.charAt(0).toUpperCase()+c.slice(1) : ""; }
+function myAdd(de, en, note, cat, idx){
+  de=(de||"").trim(); en=(en||"").trim(); note=(note||"").trim(); cat=tidyCat(cat)||guessCat(de);
+  if(!de || !en) return false;
+  const list=myWords(), row=[de,en,note,cat];
+  if(idx!=null && list[idx]){ list[idx]=row; return true; }
+  const i=list.findIndex(r=>r[0].toLowerCase()===de.toLowerCase());
+  if(i>=0) list[i]=row; else list.unshift(row);
+  return true;
+}
+function parseLines(text, defCat){   // German = English = note = category   (note and category optional; ; or tab also work)
+  let n=0;
+  text.split(/\r?\n/).forEach(line=>{
+    if(!line.trim()) return;
+    const p=line.split(/\s*(?:=|;|\t)\s*/).map(x=>x.trim());
+    if(p.length>=2 && myAdd(p[0],p[1],p[2]||"",p[3]||defCat||"")) n++;
+  });
+  return n;
+}
+function mySave(msg){ save(); refreshMy(); renderMenu(); if(msg) toast(msg); }
+function myAddForm(){
+  const de=document.getElementById("my-de"), en=document.getElementById("my-en"), note=document.getElementById("my-note"), cat=document.getElementById("my-cat");
+  if(!de.value.trim()||!en.value.trim()){ toast("✋ German and English are both needed"); (de.value.trim()?en:de).focus(); return; }
+  const editing = myEdit!=null;
+  myAdd(de.value, en.value, note.value, cat.value, myEdit);
+  const keepCat = cat.value;
+  de.value=en.value=note.value=""; cat.value = editing ? "" : keepCat;   // keep the category for the next word
+  myCancelEdit(true);
+  if(!editing) addXP(2);
+  mySave(editing ? "✏️ Word updated" : "⭐ Word added!");
+  de.focus();
+}
+function myEditStart(i){
+  const r=myWords()[i]; if(!r) return;
+  myEdit=i;
+  document.getElementById("my-de").value=r[0]; document.getElementById("my-en").value=r[1];
+  document.getElementById("my-note").value=r[2]||""; document.getElementById("my-cat").value=r[3]||"";
+  document.getElementById("my-addbtn").textContent="💾 Save";
+  document.getElementById("my-cancel").hidden=false;
+  document.getElementById("mbs-my").scrollIntoView({behavior:"smooth"});
+  setTimeout(()=>document.getElementById("my-de").focus(),300);
+}
+function myCancelEdit(silent){
+  myEdit=null;
+  const b=document.getElementById("my-addbtn"); if(b) b.textContent="➕ Add";
+  const c=document.getElementById("my-cancel"); if(c) c.hidden=true;
+  if(!silent){ ["my-de","my-en","my-note","my-cat"].forEach(id=>document.getElementById(id).value=""); }
+}
+function myBulk(){
+  const ta=document.getElementById("my-bulk"), n=parseLines(ta.value, document.getElementById("my-bulkcat").value);
+  if(!n){ toast("Nothing found: one word per line, like  der Hund = dog"); return; }
+  ta.value=""; mySave(`⭐ ${n} word${n>1?"s":""} added!`);
+}
+function myDelete(i){
+  const r=myWords()[i]; if(!r) return;
+  if(!confirm(`Delete “${strip(r[0]).replace(/\|/g,"")}” from My words?`)) return;
+  myWords().splice(i,1); if(myEdit===i) myCancelEdit(); mySave("🗑️ Deleted");
+}
+function myRenameCat(cat){
+  const name=tidyCat(prompt(`New name for the category “${cat}”:`, cat)); if(!name || name===cat) return;
+  myWords().forEach(r=>{ if((r[3]||"Other")===cat) r[3]=name; });
+  if(myCatFilter===cat) myCatFilter=name;
+  mySave(`🏷️ Renamed to “${name}”`);
+}
+function myText(){ return myWords().map(r=>[r[0],r[1],r[2]||"",r[3]||""].join(" = ").replace(/( = )+$/,"")).join("\n"); }
+function myExport(){
+  if(!myWords().length){ toast("No words to export yet"); return; }
+  const blob=new Blob([myText()],{type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="my-german-words.txt";
+  document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},500);
+  toast("📤 File downloaded");
+}
+function myCopy(){
+  if(!myWords().length){ toast("No words to copy yet"); return; }
+  const t=myText();
+  const fallback=()=>{ const ta=document.getElementById("my-bulk"); ta.value=t; ta.closest("details").open=true; ta.select(); toast("Select all and copy the text in the box"); };
+  if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(()=>toast("📋 Copied! Paste it in a message or email"),fallback); else fallback();
+}
+function myImport(input){
+  const f=input.files && input.files[0]; if(!f) return;
+  const rd=new FileReader();
+  rd.onload=()=>{ const n=parseLines(String(rd.result)); input.value=""; mySave(n?`📥 ${n} word${n>1?"s":""} imported!`:"No words found in that file"); };
+  rd.readAsText(f,"utf-8");
+}
+function myPickCat(btn,c){ myCatFilter=c; refreshMy(); }
+function myCardsHTML(){
+  const list=myWords();
+  if(!list.length) return `<p style="color:var(--muted);margin:6px 0 0">No words yet. Add your first one above and give it a category! Your words get their own cards here, and they also go into the 🃏 Review deck.</p>`;
+  const cats=myCats(); if(myCatFilter && !cats.includes(myCatFilter)) myCatFilter="";
+  let h = `<div class="tabs mycats">
+    <button class="${myCatFilter?'':'on'}" onclick="myPickCat(this,'')">All · ${list.length}</button>
+    ${cats.map(c=>`<button class="${myCatFilter===c?'on':''}" onclick="myPickCat(this,'${esc(c).replace(/'/g,"\\'")}')">🏷️ ${c} · ${list.filter(r=>(r[3]||"Other")===c).length}</button>`).join("")}
+  </div>`;
+  (myCatFilter?[myCatFilter]:cats).forEach(c=>{
+    const idxs=list.map((r,i)=>[r,i]).filter(([r])=>(r[3]||"Other")===c);
+    h += `<div class="mycatblock" data-cat="${esc(c)}"><h4 class="mycath">🏷️ ${c} <small>${idxs.length}</small>
+      <button class="mini-btn noprint" title="Rename this category" onclick="myRenameCat('${esc(c).replace(/'/g,"\\'")}')">✏️ Rename</button>
+      ${idxs.length>=3?`<button class="mini-btn noprint" onclick="newMatch(myWords().filter(r=>(r[3]||'Other')==='${esc(c).replace(/'/g,"\\'")}'),'mbm-my')">🧩 Match</button>`:""}</h4>
+      <div class="cards mbcards">${idxs.map(([r,i])=>mbCard(r,"my",i).replace('<div class="flip-inner">',
+        `<button class="myact myedit" title="Edit / change category" onclick="event.stopPropagation();myEditStart(${i})">✏️</button><button class="myact mydel" title="Delete" onclick="event.stopPropagation();myDelete(${i})">✕</button><div class="flip-inner">`)).join("")}</div></div>`;
+  });
+  return h;
+}
+function refreshMy(){
+  const w=document.getElementById("mywrap"); if(!w) return;
+  w.innerHTML=myCardsHTML();
+  const n=myWords().length;
+  document.getElementById("mycount").textContent = n+" word"+(n===1?"":"s")+" · "+myCats().length+" categor"+(myCats().length===1?"y":"ies");
+  const dl=document.getElementById("mycatlist"); if(dl) dl.innerHTML=[...new Set([...myCats(),...SUGGESTED_CATS])].map(c=>`<option value="${esc(c)}">`).join("");
+  const mt=document.getElementById("mymatch"); if(mt) mt.style.display = n>=3 ? "" : "none";
+  if(document.getElementById("mbsearch")) mbFilter();
+}
+function myWordsHTML(){
+  const n=myWords().length;
+  return `<section class="block mbsec mysec" data-g="My words" id="mbs-my">
+    <h3>⭐ My words <small id="mycount">${n} word${n===1?"":"s"} · ${myCats().length} categor${myCats().length===1?"y":"ies"}</small>
+      <button id="mymatch" class="btn alt noprint" style="margin-left:auto;padding:6px 12px;${n>=3?'':'display:none'}" onclick="newMatch(myWords(),'mbm-my')">🧩 Match game</button></h3>
+    <div class="noprint">
+      <datalist id="mycatlist">${[...new Set([...myCats(),...SUGGESTED_CATS])].map(c=>`<option value="${esc(c)}">`).join("")}</datalist>
+      <div class="myform">
+        <input id="my-de" placeholder="German: der Hund · ab|holen" autocomplete="off" autocapitalize="off" spellcheck="false" onfocus="lastInput=this" onkeydown="if(event.key==='Enter')document.getElementById('my-en').focus()">
+        <input id="my-en" placeholder="English: dog · to pick up" autocomplete="off" onkeydown="if(event.key==='Enter')myAddForm()">
+        <input id="my-note" placeholder="Note (optional): pl. die Hunde" autocomplete="off" onfocus="lastInput=this" onkeydown="if(event.key==='Enter')myAddForm()">
+        <input id="my-cat" list="mycatlist" placeholder="🏷️ Category: Food, Work…" autocomplete="off" onkeydown="if(event.key==='Enter')myAddForm()">
+        <button class="btn" id="my-addbtn" onclick="myAddForm()">➕ Add</button>
+      </div>
+      <p style="margin:8px 0 0"><button class="btn alt" id="my-cancel" hidden onclick="myCancelEdit()">✖ Cancel editing</button></p>
+      <div class="umlauts" style="margin:8px 0 4px">Special letters: ${["ä","ö","ü","ß","Ä","Ö","Ü"].map(ch=>`<button onmousedown="event.preventDefault()" onclick="insertCh('${ch}')">${ch}</button>`).join("")}
+        <span style="margin-left:6px">Tip: pick an existing category or type a new one. Write the article (<span class="der">der</span>/<span class="die">die</span>/<span class="das">das</span>) to get the colour, and | for separable verbs (an|rufen). Tap ✏️ on a card to edit it or move it to another category.</span></div>
+      <details class="mydetails"><summary>📋 Add several words at once · 📤 export · 📥 import</summary>
+        <p style="margin:8px 0">One word per line: <code>German = English = note = category</code> (note and category are optional).</p>
+        <textarea id="my-bulk" rows="5" placeholder="der Hund = dog = pl. die Hunde = Animals&#10;ab|holen = to pick up&#10;die Brücke = bridge =  = Travel" onfocus="lastInput=this"></textarea>
+        <p style="display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 0;align-items:center">
+          <input id="my-bulkcat" list="mycatlist" placeholder="🏷️ Category for all (optional)" style="border:2px solid var(--line);border-radius:10px;padding:8px 10px;font-size:1rem;background:var(--card);color:var(--ink);flex:1 1 200px">
+          <button class="btn" onclick="myBulk()">➕ Add all</button>
+        </p>
+        <p style="display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 0">
+          <button class="btn alt" onclick="myExport()">📤 Download my words</button>
+          <button class="btn alt" onclick="myCopy()">📋 Copy my words</button>
+          <label class="btn alt" style="display:inline-block">📥 Import a file<input type="file" accept=".txt,text/plain" onchange="myImport(this)" hidden></label>
+        </p>
+        <p style="font-size:.85rem;color:var(--muted);margin:8px 0 0">Your words are saved on this device. To move them to another phone or computer (or share them), download or copy them here, then import or paste them there. Categories are kept.</p>
+      </details>
+    </div>
+    <div id="mywrap" style="margin-top:14px">${myCardsHTML()}</div>
+    <div id="mbm-my" style="margin-top:14px"></div>
+  </section>`;
+}
+
+function mbDe(de){ // separable prefix in accent colour, articles coloured
+  let h = colorArt(de);
+  return h.replace(/(^|\s)([a-zäöü]+)\|/g,(m,sp,pre)=>`${sp}<span class="pre">${pre}</span>`);
+}
+function mbCard(r, s, k){
+  const de = `<div><div class="mb-de">${mbDe(r[0])}</div><button class="say mb-say" data-say="${esc(sayText(r))}">🔊</button></div>`;
+  const en = `<div><div class="mb-en">${r[1]}</div>${r[2]?`<div class="mb-note">${r[2]}</div>`:""}</div>`;
+  const search = esc((strip(r[0])+" "+strip(r[1])+" "+strip(r[2])).toLowerCase().replace(/\|/g,""));
+  const [f,b] = S.mbRev ? [en,de] : [de,en];
+  return `<div class="flip mbcard" data-s="${search}" onclick="if(!event.target.closest('.say'))this.classList.toggle('on')"><div class="flip-inner"><div class="face front">${f}</div><div class="face back">${b}</div></div></div>`;
+}
+function memoryHTML(){
+  const groups=[...new Set(MEMORY_BOOK.map(s=>s.group))];
+  return `<div class="kicker">Vocabulary · A1–A2</div>
+  <div class="chapter-head"><span class="emoji">📒</span><h2>Memory Book</h2></div>
+  <p class="intro">${mbCount()} words, one card each, and you can add your own ⭐. <b>Say the answer out loud, then click the card</b> to check. Colour code: <span class="der">der</span> · <span class="die">die</span> · <span class="das">das</span> · separable prefix in <span class="pre">orange</span>. All these cards are also in the 🃏 Review deck.</p>
+  <section class="block noprint mbtools" style="position:sticky;top:64px;z-index:4">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <input id="mbsearch" placeholder="🔍 Search a word (German or English)…" oninput="mbFilter()" style="flex:1 1 260px;border:2px solid var(--line);border-radius:10px;padding:9px 12px;font-size:1rem;background:var(--card);color:var(--ink)">
+      <button class="btn alt" onclick="mbToggleDir()">${S.mbRev?'🇬🇧 → 🇩🇪 English first':'🇩🇪 → 🇬🇧 German first'}</button>
+      <button class="btn alt" onclick="mbFlipAll()">🔄 Flip all back</button>
+    </div>
+    <div class="tabs" style="margin:12px 0 0">
+      <button class="on" onclick="mbGroup(this,'')">All</button>
+      <button onclick="mbGroup(this,'My words')">⭐ My words</button>
+      ${groups.map(g=>`<button onclick="mbGroup(this,'${g}')">${g}</button>`).join("")}
+    </div>
+  </section>
+  ${myWordsHTML()}
+  ${MEMORY_BOOK.map((s,k)=>`<section class="block mbsec" data-g="${s.group}" id="mbs-${k}">
+     <h3>${s.emoji} ${s.title} <small>${s.group} · ${s.rows.length} words</small>
+       <button class="btn alt noprint" style="margin-left:auto;padding:6px 12px" onclick="newMatch(MEMORY_BOOK[${k}].rows,'mbm-${k}')">🧩 Match game</button></h3>
+     ${s.hook?`<div class="memo"><span class="tag">Memory hook</span>${s.hook}</div>`:""}
+     <div class="cards mbcards">${s.rows.map((r,i)=>mbCard(r,k,i)).join("")}</div>
+     <div id="mbm-${k}" style="margin-top:14px"></div>
+   </section>`).join("")}
+  <p id="mbnone" class="intro" hidden>No word found. 🤷</p>`;
+}
+let mbCurGroup="";
+function mbFilter(){
+  const q=(document.getElementById("mbsearch").value||"").toLowerCase().trim();
+  let any=false;
+  document.querySelectorAll(".mbsec").forEach(sec=>{
+    const inGroup = !mbCurGroup || sec.dataset.g===mbCurGroup;
+    let n=0; sec.querySelectorAll(".mbcard").forEach(c=>{ const show = inGroup && (!q || c.dataset.s.includes(q)); c.style.display=show?"":"none"; if(show) n++; });
+    sec.querySelectorAll(".mycatblock").forEach(bl=>{ bl.style.display=[...bl.querySelectorAll(".mbcard")].some(c=>c.style.display!=="none")?"":"none"; });
+    const keep = sec.classList.contains("mysec") && inGroup && !q;
+    sec.style.display = (n||keep)? "" : "none"; if(n||keep) any=true;
+  });
+  document.getElementById("mbnone").hidden = any;
+}
+function mbGroup(btn,g){ btn.parentNode.querySelectorAll("button").forEach(b=>b.classList.remove("on")); btn.classList.add("on"); mbCurGroup=g; mbFilter(); }
+function mbFlipAll(){ document.querySelectorAll(".mbcard.on").forEach(c=>c.classList.remove("on")); }
+function mbToggleDir(){ S.mbRev=!S.mbRev; save(); const q=document.getElementById("mbsearch").value, g=mbCurGroup; render(); document.getElementById("mbsearch").value=q; mbCurGroup=g;
+  if(g) document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("on", b.textContent===g)); mbFilter(); }
+
+/* ---------- Matching game ---------- */
+let MT=null;
+function newMatch(pool, cid){
+  pool = pool || chapters[page].vocab; cid = cid || "tab-match";
+  if(MT && MT.cid!==cid){ const old=document.getElementById(MT.cid); if(old && MT.cid.startsWith("mbm-")) old.innerHTML=""; }
+  const seen=new Set(), uniq=pool.filter(r=>{ const e=strip(r[1]); if(seen.has(e)||e.length>=40) return false; seen.add(e); return true; });
+  const rows=shuffle(uniq).slice(0,6);
+  MT={rows, pool, cid, sel:null, left:rows.length, errors:0};
+  const L=shuffle(rows.map((r,k)=>[k,strip(r[0]).replace(/\|/g,"")])), R=shuffle(rows.map((r,k)=>[k,strip(r[1])]));
+  document.getElementById(cid).innerHTML = `<p style="margin-top:0">Click a German word, then its English meaning. 🧩</p>
+    <div class="match"><div class="col">${L.map(([k,t])=>`<button data-side="L" data-k="${k}" onclick="pick(this)">${t}</button>`).join("")}</div>
+    <div class="col">${R.map(([k,t])=>`<button data-side="R" data-k="${k}" onclick="pick(this)">${t}</button>`).join("")}</div></div>
+    <p id="match-msg" class="score"></p><button class="btn alt" onclick="newMatch(MT.pool,MT.cid)">🔄 New round</button>`;
+}
+function pick(b){
+  if(b.classList.contains("done")) return;
+  if(b.dataset.side==="L"){ document.querySelectorAll('#'+MT.cid+' .match [data-side="L"]').forEach(x=>x.classList.remove("sel")); b.classList.add("sel"); MT.sel=b; speak(sayText(MT.rows[b.dataset.k])); return; }
+  if(!MT.sel){ b.classList.add("shake"); setTimeout(()=>b.classList.remove("shake"),400); return; }
+  if(MT.sel.dataset.k===b.dataset.k){
+    MT.sel.classList.remove("sel"); MT.sel.classList.add("done"); b.classList.add("done"); MT.sel=null; MT.left--;
+    if(MT.left===0){ const bonus = MT.errors===0?15:8; document.getElementById("match-msg").textContent = MT.errors===0?"Perfect round! 🌟":"All matched! ✅ ("+MT.errors+" mistake"+(MT.errors>1?"s":"")+")"; addXP(bonus); }
+  } else { MT.errors++; b.classList.add("shake"); MT.sel.classList.add("shake"); const s=MT.sel; setTimeout(()=>{b.classList.remove("shake");s.classList.remove("shake")},400); }
+}
+
+/* ---------- Listening game ---------- */
+let LS=null;
+function newListen(){ LS={round:0, score:0, total:6}; listenRound(); }
+function listenRound(){
+  const c=chapters[page], pane=document.getElementById("tab-listen");
+  if(LS.round>=LS.total){
+    pane.innerHTML = `<p class="score">You got ${LS.score} / ${LS.total} by ear! ${LS.score>=5?"👂🏆 Super Ohren (super ears)!":"Keep listening! 🎧"}</p><button class="btn" onclick="newListen()">🔄 Play again</button>`;
+    addXP(LS.score*2); return;
+  }
+  const uniq=[]; c.vocab.forEach(r=>{ if(!uniq.find(u=>strip(u[1])===strip(r[1]))) uniq.push(r); });
+  const opts=shuffle(uniq).slice(0,4); LS.target=opts[Math.floor(Math.random()*opts.length)]; LS.opts=opts; LS.locked=false;
+  pane.innerHTML = `<p style="margin-top:0;text-align:center">Round ${LS.round+1} / ${LS.total}: press play, listen, and pick the meaning.</p>
+    <button class="listen-play" onclick="speak(sayText(LS.target))">▶</button>
+    <div class="lopts">${opts.map((o,k)=>`<button onclick="lpick(${k},this)">${o[1]}</button>`).join("")}</div>
+    <p id="lfb" class="feedback" style="text-align:center"></p>`;
+  setTimeout(()=>speak(sayText(LS.target)),350);
+}
+function lpick(k,b){
+  if(LS.locked) return; LS.locked=true;
+  const right = LS.opts[k]===LS.target;
+  const all=b.parentNode.querySelectorAll("button");
+  all[LS.opts.indexOf(LS.target)].classList.add("ok"); if(!right) b.classList.add("ko");
+  if(right) LS.score++;
+  document.getElementById("lfb").innerHTML = (right?"✅ Richtig! ":"❌ ")+`It was <b>${strip(LS.target[0])}</b>.`;
+  LS.round++; setTimeout(listenRound, 1500);
+}
+
+/* ---------- Typing practice ---------- */
+let lastInput=null;
+function typeHTML(items){
+  return `<div class="umlauts">Special letters: ${["ä","ö","ü","ß","Ä","Ö","Ü"].map(ch=>`<button onmousedown="event.preventDefault()" onclick="insertCh('${ch}')">${ch}</button>`).join("")}</div>`
+    + items.map((t,i)=>`<div class="type-row"><label>${t.p}</label><input data-i="${i}" autocomplete="off" autocapitalize="off" spellcheck="false" onfocus="lastInput=this" onkeydown="if(event.key==='Enter')checkType(${i})"><button class="btn" onclick="checkType(${i})">Check</button><span class="tfb" id="tfb-${i}"></span></div>`).join("")
+    + `<p style="font-size:.85rem;color:var(--muted)">Tip: no German keyboard? Use the buttons above, or type <i>ss</i> for ß.</p>`;
+}
+function insertCh(ch){
+  const inp = lastInput || document.querySelector(".type-row input"); if(!inp) return;
+  const s=inp.selectionStart??inp.value.length, e=inp.selectionEnd??inp.value.length;
+  inp.value = inp.value.slice(0,s)+ch+inp.value.slice(e); inp.focus(); inp.setSelectionRange(s+1,s+1);
+}
+const norm = s => s.trim().toLowerCase().replace(/ß/g,"ss").replace(/[.!?,]+$/,"").replace(/\s+/g," ");
+const TRIES = {};
+function checkType(i){
+  const c=chapters[page], item=c.type[i], inp=document.querySelector(`.type-row input[data-i="${i}"]`), fb=document.getElementById("tfb-"+i);
+  const key=c.id+"-"+i;
+  if(inp.classList.contains("ok")) return;
+  if(item.a.some(a=>norm(a)===norm(inp.value))){
+    inp.classList.remove("ko"); inp.classList.add("ok"); fb.innerHTML="✅ "+CHEERS[Math.floor(Math.random()*CHEERS.length)];
+    speak(item.a[0]); addXP(TRIES[key]?2:4);
+  } else {
+    TRIES[key]=(TRIES[key]||0)+1; inp.classList.add("ko");
+    fb.innerHTML = TRIES[key]===1 ? `💡 Hint: it starts with “<b>${item.a[0][0]}</b>”` : `👉 Answer: <b>${item.a[0]}</b>`;
+  }
+}
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+function dashHTML(){
+  const quizCh = chapters.filter(c=>c.quiz||c.final);
+  const n = quizCh.filter(c=>S.done[c.id]).length;
+  const lvl = levelOf(S.xp), into = S.xp - lvl*XP_PER_LEVEL, pct = lvl===LEVELS.length-1?100:Math.min(100,into/XP_PER_LEVEL*100);
+  const next = chapters.findIndex(c=>(c.quiz||c.final) && !S.done[c.id]);
+  const cardsTotal = allCards().length, mastered = allCards().filter(c=>(S.boxes[c.key]||0)>=3).length;
+  return `<div class="kicker">Dashboard</div>
+  <div class="chapter-head"><span class="emoji">🏆</span><h2>Hallo! Ready for today's German?</h2></div>
+  <p class="intro">Your progress is saved in this browser. Earn XP with every right answer, collect all the badges, and keep your streak alive 🔥.</p>
+  <div class="stats">
+    <div class="stat"><b>${S.xp}</b><span>XP earned</span></div>
+    <div class="stat"><b>${n}/${quizCh.length}</b><span>badges</span></div>
+    <div class="stat"><b>🔥 ${(S.last===today()||S.last===yesterday())?S.streak:0}</b><span>day streak</span></div>
+    <div class="stat"><b>${mastered}/${cardsTotal}</b><span>cards mastered</span></div>
+  </div>
+  <section class="block"><h3>📈 Level: ${LEVELS[lvl]}</h3>
+    <div class="lvlbar"><div style="width:${pct}%"></div></div>
+    <small style="color:var(--muted)">${lvl===LEVELS.length-1?"Maximum level reached. You're a Meister! 👑":`${XP_PER_LEVEL-into} XP to ${LEVELS[lvl+1]}`}</small>
+    <p style="margin-bottom:0">${next>=0?`<button class="btn big" onclick="go(${next})">▶ Continue: ${chapters[next].emoji} ${chapters[next].title}</button>`:`<b>You've earned every badge. Fantastisch! 🎓</b>`}
+    <button class="btn alt big" onclick="go('review')">🃏 Review deck</button>
+    <button class="btn alt big" onclick="go('memory')">📒 Memory Book</button></p>
+  </section>
+  <section class="block"><h3>🏅 Badges</h3>
+    <div class="badges">${quizCh.map(c=>`<div class="badge ${S.done[c.id]?'':'off'}" onclick="go(${chapters.indexOf(c)})"><span class="e">${c.emoji}</span>${c.title}</div>`).join("")}</div>
+  </section>
+  <section class="block"><h3>🗺️ Course map</h3>
+    ${UNITS.map((u,k)=>{ const end = k+1<UNITS.length?UNITS[k+1].from:chapters.length; const list=chapters.slice(u.from,end);
+      return `<p style="margin:6px 0"><b>${u.name}</b><br>${list.map(c=>`<a href="#" onclick="go(${chapters.indexOf(c)});return false" style="color:inherit">${c.emoji} ${c.title}</a>${S.done[c.id]?' 🏅':''}`).join(" · ")}</p>`}).join("")}
+  </section>
+  <p style="text-align:right"><button class="btn alt" onclick="if(confirm('Reset all progress?')){localStorage.removeItem(KEY);location.reload()}">↺ Reset progress</button></p>`;
+}
+
+/* =========================================================
+   REVIEW DECK (Leitner boxes)
+   ========================================================= */
+function allCards(deck){
+  deck = deck || "all"; const out=[];
+  if(deck!=="mb" && deck!=="my") chapters.forEach(c=>(c.cards||[]).forEach((cd,k)=>out.push({key:c.id+":"+k, f:cd[0], b:cd[1], ch:c})));
+  if(deck!=="course") myWords().forEach(r=>out.push({key:"my:"+strip(r[0]), f:mbDe(r[0]), b:r[1]+(r[2]?`<div class="mb-note">${r[2]}</div>`:""), say:sayText(r), ch:{emoji:"⭐", title:"My words · "+(r[3]||"Other")}}));
+  if(deck==="my") return out;
+  if(deck!=="course") MEMORY_BOOK.forEach((s,i)=>s.rows.forEach(r=>out.push({key:"mb:"+strip(r[0]), f:mbDe(r[0]), b:r[1]+(r[2]?`<div class="mb-note">${r[2]}</div>`:""), say:sayText(r), ch:{emoji:"📒", title:"Memory Book · "+s.title}})));
+  return out;
+}
+let RV=null;
+function reviewHTML(){
+  const d=S.deck||"all";
+  return `<div class="kicker">Spaced repetition</div>
+  <div class="chapter-head"><span class="emoji">🃏</span><h2>Review deck</h2></div>
+  <p class="intro">Guess the meaning, flip the card, then be honest! Cards you know move up a box and come back less often; cards you miss go back to box 1. Get a card to box 4 to master it. 🧠</p>
+  <section class="block">
+    <div class="tabs" style="justify-content:center">
+      ${[["all","🌍 Everything"],["course","📚 Course chapters"],["mb","📒 Memory Book"],["my","⭐ My words"]].map(([k,l])=>`<button class="${d===k?'on':''}" onclick="S.deck='${k}';save();RV=null;render()">${l}</button>`).join("")}
+    </div>
+    <div class="boxes" id="boxes"></div>
+    <div class="bigcard flip" id="rcard" onclick="this.classList.toggle('on')"><div class="flip-inner"><div class="face front" id="rfront"></div><div class="face back" id="rback"></div></div></div>
+    <p style="text-align:center;color:var(--muted);font-size:.88rem" id="rfrom"></p>
+    <p style="text-align:center">
+      <button class="btn alt big" onclick="speak(RV.say||strip(RV.f))">🔊 Listen</button>
+      <button class="btn big" style="background:var(--ko)" onclick="grade(false)">🔁 Again</button>
+      <button class="btn big" style="background:var(--ok)" onclick="grade(true)">✅ Got it</button></p>
+  </section>`;
+}
+function nextReview(){
+  const cards=allCards(S.deck);
+  const counts=[0,0,0,0,0]; cards.forEach(c=>counts[Math.min(S.boxes[c.key]||0,4)]++);
+  document.getElementById("boxes").innerHTML = ["📦 Box 1","📦 Box 2","📦 Box 3","🏆 Mastered"].map((n,k)=>`<span>${n}: <b>${k<3?counts[k]:counts[3]+counts[4]}</b></span>`).join("");
+  // weighted pick: lower boxes appear more often
+  const weighted=[]; cards.forEach(c=>{ const b=Math.min(S.boxes[c.key]||0,4); const w=[8,4,2,1,1][b]; for(let i=0;i<w;i++) weighted.push(c); });
+  let pickC; do { pickC = weighted[Math.floor(Math.random()*weighted.length)]; } while(RV && pickC.key===RV.key && cards.length>1);
+  RV=pickC;
+  const card=document.getElementById("rcard"), wasOn=card.classList.contains("on");
+  card.classList.remove("on");
+  const fill=()=>{ const f=document.getElementById("rfront"), b=document.getElementById("rback"); if(f&&b){ f.innerHTML="<div>"+colorArt(RV.f)+"</div>"; b.innerHTML="<div>"+RV.b+"</div>"; } };
+  if(wasOn) setTimeout(fill,250); else fill();
+  document.getElementById("rfrom").textContent = "From: "+RV.ch.emoji+" "+RV.ch.title+" · Box "+(Math.min(S.boxes[RV.key]||0,3)+1);
+}
+function grade(ok){
+  S.boxes[RV.key] = ok ? Math.min((S.boxes[RV.key]||0)+1,4) : 0;
+  save(); if(ok) addXP(1); else touchStreak();
+  nextReview();
+}
+
+/* =========================================================
+   GLOBAL EVENTS + START
+   ========================================================= */
+document.addEventListener("click", e=>{
+  const b=e.target.closest(".say"); if(!b) return;
+  e.stopPropagation(); speak(b.dataset.say);
+});
+document.body.classList.toggle("dark", S.dark);
+render();
+</script>
+<script>
+/* Installable app: works offline once opened */
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){
+  window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+}
+</script>
+</body>
+</html>

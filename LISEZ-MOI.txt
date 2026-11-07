@@ -1,0 +1,53 @@
+DEUTSCH MACHT SPASS ! – Application installable (Android, iPhone, ordinateur)
+=========================================================================
+
+Ce dossier contient l'application complète :
+  index.html             le cours + Memory Book + « My words » (tes mots, classés par catégorie)
+  manifest.webmanifest   la fiche de l'application (nom, icône, plein écran)
+  sw.js                  permet de l'utiliser sans connexion
+  icon-*.png             les icônes
+
+Pour qu'Android puisse l'installer, l'application doit être en ligne (adresse en https).
+Ça se fait gratuitement en 2 minutes.
+
+
+1) METTRE L'APPLICATION EN LIGNE (une seule fois)
+-------------------------------------------------
+Option A – Netlify Drop (le plus simple)
+  • Va sur https://app.netlify.com/drop (création de compte gratuite).
+  • Dézippe ce fichier, puis glisse-dépose le DOSSIER « deutsch-app » dans la page.
+  • Netlify te donne une adresse du type https://xxxx.netlify.app
+
+Option B – GitHub Pages
+  • Crée un dépôt GitHub, envoie-y les fichiers du dossier.
+  • Settings → Pages → Branch « main » → Save.
+  • Adresse : https://ton-nom.github.io/nom-du-depot/
+
+
+2) L'INSTALLER SUR ANDROID
+--------------------------
+  • Ouvre l'adresse dans Chrome sur le téléphone.
+  • Menu ⋮ → « Installer l'application » (ou « Ajouter à l'écran d'accueil »).
+  • L'icône apparaît avec tes autres applis : elle s'ouvre en plein écran
+    et fonctionne ensuite sans internet.
+
+Sur iPhone : ouvre l'adresse dans Safari → bouton Partager → « Sur l'écran d'accueil ».
+
+
+3) OBTENIR UN VRAI FICHIER APK (facultatif)
+-------------------------------------------
+  • Va sur https://www.pwabuilder.com et colle l'adresse de l'étape 1.
+  • « Package for stores » → Android → télécharge le paquet.
+  • Le zip obtenu contient un fichier .apk à installer sur le téléphone
+    (Android te demandera d'autoriser l'installation depuis cette source).
+
+
+BON À SAVOIR
+------------
+  • Tes mots, tes catégories et ta progression sont enregistrés sur l'appareil.
+  • Pour les transférer d'un appareil à l'autre (ou les partager avec quelqu'un) :
+    Memory Book → My words → « Download my words » ou « Copy my words »,
+    puis « Import a file » (ou coller dans « Add several words at once ») sur l'autre appareil.
+  • Pour mettre à jour l'application : remplace index.html en ligne par la nouvelle version.
+
+Cours généré avec Claude (Anthropic).
